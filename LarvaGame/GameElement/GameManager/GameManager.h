@@ -31,7 +31,7 @@ public:
     int boardSize = 10;
     int tileSize = 30;
 
-    int gameTime = 500;
+    int gameTime = 1000;
 
     int itemSpawnTime = 1000;
 

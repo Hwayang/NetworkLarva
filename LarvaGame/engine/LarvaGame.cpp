@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <string>
 
 #include "framework.h"
 #include "LarvaGame.h"
@@ -213,6 +214,27 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
                     SelectObject(hdc, OldBrush);
                     DeleteObject(MyBrush);
+                }
+            }
+
+            int locbuf = 100;
+
+            //디버그용
+            for (int i = 0; i < gameManager.playerCount; i++)
+            {
+                for (int j = 0; j < gameManager.BoardList[i]->larvaList.size(); j++)
+                {
+                    std::wstring debugText = L"Larva " + std::to_wstring(i) + L": ";
+
+                    debugText += L"Left=" + std::to_wstring(gameManager.BoardList[i]->larvaList[j]->GetLoc().left) + L", ";
+                    debugText += L"Top=" + std::to_wstring(gameManager.BoardList[i]->larvaList[j]->GetLoc().top) + L", ";
+                    debugText += L"Right=" + std::to_wstring(gameManager.BoardList[i]->larvaList[j]->GetLoc().right) + L", ";
+                    debugText += L"Bottom=" + std::to_wstring(gameManager.BoardList[i]->larvaList[j]->GetLoc().bottom);
+
+                    // DrawText로 화면에 출력
+                    RECT textRect = { 500, (locbuf*i)+600, 1500, (locbuf * i) +700 }; // 텍스트 출력 위치
+                    DrawText(hdc, debugText.c_str(), -1, &textRect, DT_LEFT | DT_SINGLELINE);
+
                 }
             }
 
