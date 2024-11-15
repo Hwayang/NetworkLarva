@@ -229,7 +229,7 @@ void GameBoard::TileAction( int tileJudge)
         break;
 
     case Wall:
-        this->GameOver();
+ //      this->GameOver();
         break;
 
     case Water:
