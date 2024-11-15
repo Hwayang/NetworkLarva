@@ -13,49 +13,18 @@ public:
     std::vector<std::vector<BoardPiece*>> boardLoc;
 
     int score = 0;
-};
 
-//게임의 전체 흐름을 총괄하는 클래스
-//GameBoard, Larva
-class GameManager
-{
-public:
-    GameManager(int PlayerCount);
-
-    void BoardSetting();
-
-    void ObjectMove();
-
-    void SetDir(int direction);
-
-    void CreateNewLarva(GameBoard* targetBoard);
-    void GameOver();
-
-private:
-    void BoardLocationSetting(GameBoard* targetBoard, int locBuf);
-    int BoardContentsSetting(GameBoard* targetBoard);
     void LarvaSetting(GameBoard* targetBoard);
 
-public:
-    GameBoard** BoardList;
+    void CreateNewLarva(GameBoard* targetBoard);
 
-    GameBoard playergameBoard;
-    GameBoard enemyGameBoard;
 
-    int playerCount = 2;
-
+    //TODO : Getter으로 빼기
     std::vector<Larva*> larvaList;
-    int boardSize = 10;
-    int gameTime = 500;
-
-    int itemSpawnTime = 1000;
 
 private:
     int actionTarget;
     int Direction;
-    int tileSize = 30;
-    int bufSize = boardSize * tileSize + 100;
-
 
     int larvaLen = 1;
 
@@ -66,6 +35,46 @@ private:
         Right,
         Bottom
     };
+
+};
+
+//게임의 전체 흐름을 총괄하는 클래스
+//GameBoard, Larva
+class GameManager
+{
+public:
+    GameManager(int PlayerCount);
+    
+    void Move();
+    void BoardSetting();
+    void SetDir(int direction);
+
+private:
+
+    void TileAction(GameBoard* targetBoard, int tileJudge);
+    void ObjectMove(GameBoard* targetBoard);
+
+    void BoardLocationSetting(GameBoard* targetBoard, int locBuf);
+    int BoardContentsSetting(GameBoard* targetBoard);
+    
+
+    void GameOver();
+
+public:
+    std::vector<GameBoard*> BoardList;
+
+    int playerCount = 2;
+
+    int boardSize = 10;
+    int tileSize = 30;
+
+    int gameTime = 500;
+
+    int itemSpawnTime = 1000;
+
+private:
+    int bufSize = boardSize * tileSize + 100;
+
 };
 
 

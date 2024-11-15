@@ -150,6 +150,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
         gameManager.BoardSetting();
         gameManager.SetDir(2);
+
         SetTimer(hWnd, 1, gameManager.gameTime, NULL);
         SetTimer(hWnd, 2, gameManager.gameTime, NULL);
         SendMessage(hWnd, WM_TIMER, 1, 0); 
@@ -222,7 +223,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
         //전체 게임 타이머
         case 1:
-            gameManager.ObjectMove();
+            gameManager.Move();
             InvalidateRect(hWnd, NULL, TRUE);
             break;
         //아이템 세팅 타이머

@@ -4,18 +4,26 @@
 
 #include "../../engine/random/random.h"
 
-#include "../GameManager/BoardPiece/BoardPiece.h"
-#include "../GameManager/BoardPiece/PlanePiece.h"
-#include "../GameManager/BoardPiece/WallPiece.h"
-#include "../GameManager/BoardPiece/WaterPiece.h"
-#include "../GameManager/BoardPiece/ForestPiece.h"
+#include "BoardPiece/BoardPiece.h"
+#include "BoardPiece/PlanePiece.h"
+#include "BoardPiece/WallPiece.h"
+#include "BoardPiece/WaterPiece.h"
+#include "BoardPiece/ForestPiece.h"
 
 void GameManager::BoardSetting()
 {
 
-    for (int i = 0; i < this.playerCount; i++)
+    for (int i = 0; i < this->playerCount; i++)
     {
         BoardLocationSetting(BoardList[i], i);
+    }
+}
+
+void GameManager::Move()
+{
+    for (int i = 0; i < this->playerCount; i++)
+    {
+        this->ObjectMove(BoardList[i]);
     }
 }
 
@@ -23,8 +31,12 @@ GameManager::GameManager(int PlayerCount)
 {
     this->playerCount = PlayerCount;
 
-    this->BoardList = new GameBoard*(new GameBoard (playergameBoard));
-    this->BoardList = new GameBoard*(new GameBoard (enemyGameBoard));
+    for (int i = 0; i < this->playerCount; i++)
+    {
+        GameBoard* target = new GameBoard;
+
+        this->BoardList.push_back(target);
+    }
 }
 
 void GameManager::BoardLocationSetting(GameBoard* targetBoard, int locBuf)
@@ -72,9 +84,9 @@ void GameManager::BoardLocationSetting(GameBoard* targetBoard, int locBuf)
         }
     }
 
-    this->larvaList.push_back(new Larva(tileSize, RECT{0, 0, tileSize, tileSize}));
+    targetBoard->larvaList.push_back(new Larva(tileSize, RECT{0, 0, tileSize, tileSize}));
 
-    LarvaSetting(targetBoard);
+    targetBoard->LarvaSetting(targetBoard);
 }
 
 int GameManager::BoardContentsSetting(GameBoard* targetBoard)
@@ -173,18 +185,15 @@ void GameManager::CreateNewLarva(GameBoard* targetBoard)
     case 2:
         if (xLoc <= 0)
         {
-            if (yLoc - 1 == 0)
+            if (yLoc - 1 > 0)
             {
-                xLoc = 0;
-                yLoc += 1;
-            }
-            else
-            {
-                xLoc = 0;
                 yLoc -= 1;
             }
         }
-        else xLoc -= 0;
+        else
+        {
+            xLoc -= 1;
+        }
         break;
 
     case 3:

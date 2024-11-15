@@ -1,36 +1,14 @@
-﻿  GameManager.cpp
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(16,30): error C2228: '.playerCount' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
-  C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(16,30):
-  'GameManager *' 형식입니다.
-  C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(16,30):
-  대신 '->'을(를) 사용하려고 했습니까?
-  
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(93,19): error C2511: 'void GameManager::ObjectMove(GameBoard *)': 오버로드된 멤버 함수가 'GameManager'에 없습니다.
-  C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(20,7):
-  'GameManager' 선언을 참조하십시오.
-  
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(95,24): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(97,35): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(98,34): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(102,12): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(113,12): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(113,55): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(117,12): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(117,55): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(122,5): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(124,5): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(126,5): error C2671: 'GameManager::ObjectMove': 정적 멤버 함수에 'this' 포인터가 없습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(126,35): error C2597: 비정적 멤버 'GameManager::actionTarget'에 대한 참조가 잘못되었습니다.
-  C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(54,9):
-  'GameManager::actionTarget' 선언을 참조하십시오.
-  
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(225,19): error C2039: 'TileAction': 'GameManager'의 멤버가 아닙니다.
-  C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(20,7):
-  'GameManager' 선언을 참조하십시오.
-  
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(241,9): error C2355: 'this': 비정적 멤버 함수 또는 비정적 데이터 멤버 이니셜라이저 안에서만 참조할 수 있습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(248,9): error C2355: 'this': 비정적 멤버 함수 또는 비정적 데이터 멤버 이니셜라이저 안에서만 참조할 수 있습니다.
-C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(256,16): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  LarvaGame.cpp
+  ForestPiece.cpp
+  BoardPiece.cpp
+  PlanePiece.cpp
+  PlanePiece.h
+  WallPiece.cpp
+  WallPiece.h
+  GameManager.cpp
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.cpp(265,16): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Larva.cpp
+  random.cpp
   WaterPiece.cpp
   코드를 생성하고 있습니다...
+  LarvaGame.vcxproj -> C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\x64\Debug\LarvaGame.exe
