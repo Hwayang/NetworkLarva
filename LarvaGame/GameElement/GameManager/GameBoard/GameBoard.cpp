@@ -15,11 +15,12 @@ void GameBoard::BoardSetting()
     BoardLocationSetting();
 }
 
-GameBoard::GameBoard(int tileSize, int boardSize, int sizebuf)
+GameBoard::GameBoard(int tileSize, int boardSize, int sizebuf, int boardNum)
 {
     this->tileSize = tileSize;
     this->boardSize = boardSize;
-    this->sizeBuf = sizeBuf;
+    this->sizeBuf = sizebuf;
+    this->boardNum = boardNum;
 }
 
 void GameBoard::BoardLocationSetting()
@@ -30,15 +31,13 @@ void GameBoard::BoardLocationSetting()
 
     for (int i = 0; i < boardSize; i++)
     {
-        //외곽에 벽 설치
-
         for (int j = 0; j < boardSize; j++)
         {
             //각 보드 피스마다의 위치 설정
-            int left = sizeBuf  + (i * tileSize);
-            int top = sizeBuf + (j * tileSize);
-            int right = sizeBuf + (i * tileSize) + tileSize;
-            int bottom = sizeBuf + (j * tileSize) + tileSize;
+            int left = (sizeBuf * boardNum)  + (i * tileSize);
+            int top = (j * tileSize);
+            int right = (sizeBuf * boardNum) + (i * tileSize) + tileSize;
+            int bottom = (j * tileSize) + tileSize;
 
             //외곽에 벽 설치
             if (i == 0 || i == boardSize - 1 || j == 0 || j == boardSize - 1)
@@ -79,8 +78,6 @@ int GameBoard::BoardContentsSetting()
 
     return gen();
 }
-
-
 
 void GameBoard::LarvaSetting()
 {

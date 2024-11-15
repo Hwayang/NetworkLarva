@@ -11,7 +11,7 @@ class Larva;
 class GameBoard
 {
 public:
-    GameBoard(int tileSize, int boardSize, int sizebuf);
+    GameBoard(int tileSize, int boardSize, int sizebuf, int boardNum);
     std::vector<std::vector<BoardPiece*>> boardLoc;
 
     int score = 0;
@@ -43,6 +43,7 @@ private:
     int boardSize;
     int tileSize;
     int sizeBuf;
+    int boardNum;
 
     enum Direction
     {

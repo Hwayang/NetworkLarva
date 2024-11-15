@@ -189,9 +189,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 
                         Rectangle(hdc, gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().left,
-                            gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().top,
-                            gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().right,
-                            gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().bottom);
+                                       gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().top,
+                                       gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().right,
+                                       gameManager.BoardList[i]->boardLoc[j][k]->GetLocation().bottom);
 
                         SelectObject(hdc, OldBrush);
                         DeleteObject(MyBrush);
@@ -201,15 +201,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             for (int i = 0; i < gameManager.playerCount; i++)
             {
-                for (int j = 0; j < gameManager.BoardList[i]->larvaList.size(); i++)
+                for (int j = 0; j < gameManager.BoardList[i]->larvaList.size(); j++)
                 {
                     MyBrush = CreateSolidBrush(gameManager.BoardList[i]->larvaList[j]->GetColor());
                     OldBrush = (HBRUSH)SelectObject(hdc, MyBrush);
 
                     Ellipse(hdc, gameManager.BoardList[i]->larvaList[j]->GetLoc().left,
-                        gameManager.BoardList[i]->larvaList[j]->GetLoc().top,
-                        gameManager.BoardList[i]->larvaList[j]->GetLoc().right,
-                        gameManager.BoardList[i]->larvaList[j]->GetLoc().bottom);
+                                 gameManager.BoardList[i]->larvaList[j]->GetLoc().top,
+                                 gameManager.BoardList[i]->larvaList[j]->GetLoc().right,
+                                 gameManager.BoardList[i]->larvaList[j]->GetLoc().bottom);
 
                     SelectObject(hdc, OldBrush);
                     DeleteObject(MyBrush);

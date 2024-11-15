@@ -26,7 +26,7 @@ GameManager::GameManager(int PlayerCount)
 
     for (int i = 0; i < this->playerCount; i++)
     {
-        GameBoard* target = new GameBoard(this->tileSize, this->boardSize, this->bufSize);
+        GameBoard* target = new GameBoard(this->tileSize, this->boardSize, this->bufSize, i);
 
         this->BoardList.push_back(target);
     }
