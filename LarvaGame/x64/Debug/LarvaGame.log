@@ -1,0 +1,17 @@
+﻿  LarvaGame.cpp
+C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\engine\LarvaGame.cpp(149,20): error C2660: 'GameManager::BoardSetting': 함수는 0개의 인수를 사용하지 않습니다.
+  C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\GameElement\GameManager\GameManager.h(25,10):
+  'GameManager::BoardSetting' 선언을 참조하십시오.
+  C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\engine\LarvaGame.cpp(149,20):
+  인수 목록 '()'을(를) 일치시키는 동안
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\engine\LarvaGame.cpp(223,24): error C2660: 'GameManager::ObjectMove': 함수는 0개의 인수를 사용하지 않습니다.
+  C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\GameElement\GameManager\GameManager.h(27,10):
+  'GameManager::ObjectMove' 선언을 참조하십시오.
+  C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\engine\LarvaGame.cpp(223,24):
+  인수 목록 '()'을(를) 일치시키는 동안
+  
+  GameManager.cpp
+C:\Users\hwaya\OneDrive\바탕 화면\공부\Winapi DX\LarvaGame\LarvaGame\GameElement\GameManager\GameManager.cpp(253,16): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Larva.cpp
+  코드를 생성하고 있습니다...
