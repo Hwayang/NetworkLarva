@@ -135,9 +135,6 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 GameManager gameManager(2);
 
-int mouseLoc[2];
-bool isDraw = false;
-
 HBRUSH MyBrush, OldBrush;
 
 #pragma endregion
@@ -149,6 +146,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
     case WM_CREATE:
     {
+        //왜 지렁이가 처음 생성될때 오른쪽 위에 박혀있을까;
+
         gameManager.BoardSetting();
         gameManager.SetDir(2);
 

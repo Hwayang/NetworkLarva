@@ -81,7 +81,9 @@ int GameBoard::BoardContentsSetting()
 
 void GameBoard::LarvaSetting()
 {
-    this->larvaList[0]->SetLoc(this->boardLoc[1][1]->GetLocation());
+    //TODO : When Create Second Larva, it locate RT
+    
+    this->larvaList[0]->SetLoc(this->boardLoc[5][0]->GetLocation());
 }
 
 void GameBoard::ObjectMove()
