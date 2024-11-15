@@ -2,11 +2,13 @@
 #include <functional>
 #include <iostream>
 
-#include <../LarvaGame/LarvaGame/engine/random/random.h>
-#include <../LarvaGame/LarvaGame/GameElement/GameManager/BoardPiece/PlanePiece.h>
-#include <../LarvaGame/LarvaGame/GameElement/GameManager/BoardPiece/WallPiece.h>
-#include <../LarvaGame/LarvaGame/GameElement/GameManager/BoardPiece/ForestPiece.h>
-#include <../LarvaGame/LarvaGame/GameElement/GameManager/BoardPiece/WaterPiece.h>
+#include "../../engine/random/random.h"
+
+#include "../GameManager/BoardPiece/BoardPiece.h"
+#include "../GameManager/BoardPiece/PlanePiece.h"
+#include "../GameManager/BoardPiece/WallPiece.h"
+#include "../GameManager/BoardPiece/WaterPiece.h"
+#include "../GameManager/BoardPiece/ForestPiece.h"
 
 void GameManager::BoardSetting()
 {

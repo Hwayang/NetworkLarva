@@ -1,6 +1,6 @@
 #pragma once
-#include "BoardPiece.h"
 
+#include "BoardPiece.h"
 
 class ForestPiece : public BoardPiece
 {
