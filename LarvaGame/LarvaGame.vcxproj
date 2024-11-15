@@ -136,6 +136,7 @@
     <ClInclude Include="engine\targetver.h" />
     <ClInclude Include="GameElement\GameManager\BoardPiece\ForestPiece.h" />
     <ClInclude Include="GameElement\GameManager\BoardPiece\BoardPiece.h" />
+    <ClInclude Include="GameElement\GameManager\GameBoard\GameBoard.h" />
     <ClInclude Include="GameElement\GameManager\GameManager.h" />
     <ClInclude Include="GameElement\Larva\Larva.h" />
     <ClInclude Include="engine\random\random.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="GameElement\GameManager\BoardPiece\PlanePiece.h" />
     <ClCompile Include="GameElement\GameManager\BoardPiece\WallPiece.cpp" />
     <ClCompile Include="GameElement\GameManager\BoardPiece\WallPiece.h" />
+    <ClCompile Include="GameElement\GameManager\GameBoard\GameBoard.cpp" />
     <ClCompile Include="GameElement\GameManager\GameManager.cpp" />
     <ClCompile Include="GameElement\Larva\Larva.cpp" />
     <ClCompile Include="engine\random\random.cpp" />

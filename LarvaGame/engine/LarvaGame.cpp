@@ -9,7 +9,7 @@
 #include "framework.h"
 #include "LarvaGame.h"
 
-//게임 매니저 호출
+//게임 매니저 include
 #include "../GameElement/GameManager/GameManager.h"
 
 #define MAX_LOADSTRING 100
@@ -199,18 +199,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 }
             }
 
-            for (int i = 0; i < gameManager.larvaList.size(); i++)
+            for (int i = 0; i < gameManager.playerCount; i++)
             {
-                MyBrush = CreateSolidBrush(gameManager.larvaList[i]->GetColor());
-                OldBrush = (HBRUSH)SelectObject(hdc, MyBrush);
+                for (int j = 0; j < gameManager.BoardList[i]->larvaList.size(); i++)
+                {
+                    MyBrush = CreateSolidBrush(gameManager.BoardList[i]->larvaList[j]->GetColor());
+                    OldBrush = (HBRUSH)SelectObject(hdc, MyBrush);
 
-                Ellipse(hdc, gameManager.larvaList[i]->GetLoc().left,
-                             gameManager.larvaList[i]->GetLoc().top,
-                             gameManager.larvaList[i]->GetLoc().right,
-                             gameManager.larvaList[i]->GetLoc().bottom);
+                    Ellipse(hdc, gameManager.BoardList[i]->larvaList[j]->GetLoc().left,
+                        gameManager.BoardList[i]->larvaList[j]->GetLoc().top,
+                        gameManager.BoardList[i]->larvaList[j]->GetLoc().right,
+                        gameManager.BoardList[i]->larvaList[j]->GetLoc().bottom);
 
-                SelectObject(hdc, OldBrush);
-                DeleteObject(MyBrush);
+                    SelectObject(hdc, OldBrush);
+                    DeleteObject(MyBrush);
+                }
             }
 
             EndPaint(hWnd, &ps);
