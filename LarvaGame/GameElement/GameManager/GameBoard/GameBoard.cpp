@@ -83,15 +83,17 @@ void GameBoard::LarvaSetting()
 {
     //TODO : When Create Second Larva, it locate RT
     
-    this->larvaList[0]->SetLoc(this->boardLoc[5][0]->GetLocation());
+    this->larvaList[0]->SetLoc(this->boardLoc[0][0]->GetLocation());
 }
 
 void GameBoard::ObjectMove()
 {
     RECT curLarvaLoc = this->larvaList[0]->GetLoc();
 
-    int xLoc = curLarvaLoc.left / this->tileSize;
-    int yLoc = curLarvaLoc.top / this->tileSize;
+    //TODO : 보정값 넣기
+
+    int xLoc = (curLarvaLoc.left - (boardNum * this->sizeBuf)) / this->tileSize;
+    int yLoc = curLarvaLoc.top  / this->tileSize;
 
     //Direction mapping
     // 0 : left, 1 : up, 2 : right, 3 : bottom
