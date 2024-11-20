@@ -20,9 +20,14 @@ void Larva::StateChange(int state)
 	}
 }
 
-void Larva::setPrevLarva(Larva* target)
+void Larva::SetPrevLarva(Larva* target)
 {
 	this->prevLarva = target;
+}
+
+void Larva::SetNextLarva(Larva* target)
+{
+	this->nextLarva = target;
 }
 
 void Larva::Stop()
@@ -32,7 +37,11 @@ void Larva::Stop()
 
 void Larva::Death()
 {
-	delete(this);
+	if (!(this->prevLarva == nullptr))
+	{
+		this->nextLarva->prevLarva = nullptr;
+		delete(this);
+	}
 }
 
 void Larva::SetLoc(RECT loc)

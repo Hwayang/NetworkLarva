@@ -15,7 +15,8 @@ public:
 	RECT GetLoc() { return this->curLoc; }
 	COLORREF GetColor() { return this->color; }
 
-	void setPrevLarva(Larva* target);
+	void SetPrevLarva(Larva* target);
+	void SetNextLarva(Larva* target);
 
 private:
 	void Stop();
@@ -24,6 +25,7 @@ private:
 	
 private:
 	Larva* prevLarva = nullptr;
+	Larva* nextLarva = nullptr;
 	
 	RECT targetLoc;
 	RECT curLoc;

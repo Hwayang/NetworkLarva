@@ -258,7 +258,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     }
     case WM_KEYDOWN:
     {
-
         //Direction mapping
         // 0 : left, 1 : up, 2 : right, 3 : bottom
         switch (wParam)

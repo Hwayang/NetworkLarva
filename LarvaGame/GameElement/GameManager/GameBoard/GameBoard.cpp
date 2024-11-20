@@ -204,12 +204,16 @@ void GameBoard::CreateNewLarva()
     Larva* newLarva = new Larva(this->tileSize, this->boardLoc[xLoc][yLoc]->GetLocation());
 
     // 이전 Larva와 연결
-    this->larvaList.back()->setPrevLarva(newLarva);
-
-    // 새로운 Larva를 리스트에 추가
+    this->larvaList.back()->SetPrevLarva(newLarva);
+    
     this->larvaList.push_back(newLarva);
 
     larvaLen++;
+
+    this->larvaList[larvaLen - 1]->SetNextLarva(larvaList.back());
+
+    // 새로운 Larva를 리스트에 추가
+
 }
 
 void GameBoard::SetDir(int direction)
@@ -248,9 +252,10 @@ void GameBoard::TileAction( int tileJudge)
 
 void GameBoard::GameOver()
 {
-    for (int i = larvaList.size() - 1; 0 < i; i++)
+    for (int i = larvaList.size() - 1; 0 < i; i--)
     {
         larvaList[i]->StateChange(0);
     }
 
+    
 }
