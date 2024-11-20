@@ -83,7 +83,7 @@ void GameBoard::LarvaSetting()
 {
     //TODO : When Create Second Larva, it locate RT
     
-    this->larvaList[0]->SetLoc(this->boardLoc[0][0]->GetLocation());
+    this->larvaList[0]->SetLoc(this->boardLoc[this->boardSize / 2][this->boardSize / 2]->GetLocation());
 }
 
 void GameBoard::ObjectMove()
@@ -129,7 +129,7 @@ void GameBoard::CreateNewLarva()
     RECT lastLarvaLoc = this->larvaList[larvaLen - 1]->GetLoc();
     int direction = this->larvaList[larvaLen - 1]->GetDir();
 
-    int xLoc = lastLarvaLoc.left / this->tileSize;
+    int xLoc = (lastLarvaLoc.left - (boardNum * this->sizeBuf)) / this->tileSize;
     int yLoc = lastLarvaLoc.top / this->tileSize;
 
     switch (direction)
@@ -233,7 +233,7 @@ void GameBoard::TileAction( int tileJudge)
         break;
 
     case Wall:
- //      this->GameOver();
+        this->GameOver();
         break;
 
     case Water:
