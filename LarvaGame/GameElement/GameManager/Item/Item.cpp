@@ -2,8 +2,8 @@
 
 Item::Item(RECT pieceLoc)
 {
-	this->itemLoc.left = pieceLoc.left - this->sizeCur;
-	this->itemLoc.top = pieceLoc.top - this->sizeCur;
+	this->itemLoc.left = pieceLoc.left + this->sizeCur;
+	this->itemLoc.top = pieceLoc.top + this->sizeCur;
 	this->itemLoc.right = pieceLoc.right - this->sizeCur;
 	this->itemLoc.bottom = pieceLoc.bottom - this->sizeCur;
 }
