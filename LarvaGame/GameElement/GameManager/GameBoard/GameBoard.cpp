@@ -51,9 +51,19 @@ void GameBoard::BoardLocationSetting()
                 switch (tileType)
                 {
                 case 1:
+                {
                     this->boardLoc[i][j] = new PlanePiece(RECT{ left, top, right, bottom });
                     this->boardLoc[i][j]->PieceAction(this->BoardItemContentsSetting());
+
+                    PlanePiece* itemTarget = dynamic_cast<PlanePiece*>(this->boardLoc[i][j]);
+
+                    if (itemTarget->GetItem() != nullptr)
+                    {
+                        ItemList.push_back(itemTarget->GetItem());
+                    }
+
                     break;
+                }
                 case 2:
                     this->boardLoc[i][j] = new ForestPiece(RECT{ left, top, right, bottom });
                     break;

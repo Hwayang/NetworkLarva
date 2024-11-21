@@ -216,6 +216,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 }
             }
 
+            for (int i = 0; i < gameManager.playerCount; i++)
+            {
+                for (int j = 0; j < gameManager.BoardList[i]->ItemList.size(); j++)
+                {
+                    MyBrush = CreateSolidBrush(gameManager.BoardList[i]->ItemList[j]->GetColor());
+                    OldBrush = (HBRUSH)SelectObject(hdc, MyBrush);
+
+                    Ellipse(hdc, gameManager.BoardList[i]->ItemList[j]->GetLocation().left,
+                                 gameManager.BoardList[i]->ItemList[j]->GetLocation().top,
+                                 gameManager.BoardList[i]->ItemList[j]->GetLocation().right,
+                                 gameManager.BoardList[i]->ItemList[j]->GetLocation().bottom
+                    );
+                    SelectObject(hdc, OldBrush);
+                    DeleteObject(MyBrush);
+                }
+            }
+
             int locbuf = 100;
 
             //디버그용

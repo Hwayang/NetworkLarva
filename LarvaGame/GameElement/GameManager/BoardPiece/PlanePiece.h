@@ -12,6 +12,7 @@ public:
 	virtual void PieceAction(int itemJudge) override;
 
 	int GetItemJudge();
+	Item* GetItem() { return itemSlot; }
 
 private:
 	Item* itemSlot;

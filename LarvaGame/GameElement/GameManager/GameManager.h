@@ -6,6 +6,7 @@
 #include "GameBoard/GameBoard.h"
 #include "BoardPiece/BoardPiece.h"
 #include "../Larva/Larva.h"
+#include "Item/Item.h"
 
 class GameBoard;
 

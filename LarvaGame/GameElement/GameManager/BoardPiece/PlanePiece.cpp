@@ -26,10 +26,17 @@ void PlanePiece::PieceAction(int itemJudge)
 	case ItemEnum::item_LarvaReduce:
 		itemSlot = new Item_LarvaReduce(this->pieceLoc);
 		break;
+
+	default:
+		itemSlot = nullptr;
+		break;
 	}
 }
 
 int PlanePiece::GetItemJudge()
 {
-	return this->itemSlot->GetItemJudge();
+	if (itemSlot != nullptr)
+		return this->itemSlot->GetItemJudge();
+	else
+		return 0;
 }

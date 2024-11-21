@@ -5,7 +5,7 @@
 class Item
 {
 public:
-    Item(RECT pieceLoc) { this->itemLoc = pieceLoc; }
+    Item(RECT pieceLoc);
 
     virtual ~Item() {};
 
@@ -20,6 +20,9 @@ public:
 protected:
     int itemJudge = 0;
     int maxCount = 0;
+
+    int sizeCur = 2;
+
     RECT itemLoc;
     COLORREF color = RGB(0, 0, 0);
 
