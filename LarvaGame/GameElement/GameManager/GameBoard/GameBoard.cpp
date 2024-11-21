@@ -46,12 +46,13 @@ void GameBoard::BoardLocationSetting()
             }
             else
             {
-                int tileType = BoardContentsSetting();
+                int tileType = BoardTileContentsSetting();
 
                 switch (tileType)
                 {
                 case 1:
                     this->boardLoc[i][j] = new PlanePiece(RECT{ left, top, right, bottom });
+                    this->boardLoc[i][j]->PieceAction(this->BoardItemContentsSetting());
                     break;
                 case 2:
                     this->boardLoc[i][j] = new ForestPiece(RECT{ left, top, right, bottom });
@@ -71,7 +72,7 @@ void GameBoard::BoardLocationSetting()
     this->LarvaSetting();
 }
 
-int GameBoard::BoardContentsSetting()
+int GameBoard::BoardTileContentsSetting()
 {
     //1 : Plane, 2 : Forest, 3 : Water
     Random<int> gen(1, 3);
@@ -79,18 +80,21 @@ int GameBoard::BoardContentsSetting()
     return gen();
 }
 
+int GameBoard::BoardItemContentsSetting()
+{
+    Random<int> gen(0, 2);
+
+    return gen();
+}
+
 void GameBoard::LarvaSetting()
 {
-    //TODO : When Create Second Larva, it locate RT
-    
     this->larvaList[0]->SetLoc(this->boardLoc[this->boardSize / 2][this->boardSize / 2]->GetLocation());
 }
 
 void GameBoard::ObjectMove()
 {
     RECT curLarvaLoc = this->larvaList[0]->GetLoc();
-
-    //TODO : 보정값 넣기
 
     int xLoc = (curLarvaLoc.left - (boardNum * this->sizeBuf)) / this->tileSize;
     int yLoc = curLarvaLoc.top  / this->tileSize;
@@ -119,7 +123,7 @@ void GameBoard::ObjectMove()
 
     this->larvaList[0]->SetLoc(this->boardLoc[xLoc][yLoc]->GetLocation());
 
-    this->actionTarget = this->boardLoc[xLoc][yLoc]->GetTileJudge();
+    this->actionTarget = this->boardLoc[xLoc][yLoc];
 
     this->TileAction(actionTarget);
 }
@@ -205,15 +209,20 @@ void GameBoard::CreateNewLarva()
 
     // 이전 Larva와 연결
     this->larvaList.back()->SetPrevLarva(newLarva);
-    
+    // 새로운 Larva를 리스트에 추가
     this->larvaList.push_back(newLarva);
 
     larvaLen++;
-
+    // 생성된 Larva를 마지막 Larva에 연결
     this->larvaList[larvaLen - 1]->SetNextLarva(larvaList.back());
+}
 
-    // 새로운 Larva를 리스트에 추가
-
+void GameBoard::DeleteBackLarva(int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        this->larvaList.back()->StateChange(0);
+    }
 }
 
 void GameBoard::SetDir(int direction)
@@ -221,7 +230,7 @@ void GameBoard::SetDir(int direction)
     this->Direction = direction;
 }
 
-void GameBoard::TileAction( int tileJudge)
+void GameBoard::TileAction(BoardPiece* target)
 {
     enum tile
     {
@@ -231,9 +240,10 @@ void GameBoard::TileAction( int tileJudge)
         Forest
     };
 
-    switch (tileJudge)
+    switch (target->GetTileJudge())
     {
     case Plane:
+        this->ItemAction(dynamic_cast<PlanePiece*>(target));
         break;
 
     case Wall:
@@ -244,10 +254,28 @@ void GameBoard::TileAction( int tileJudge)
         break;
 
     case Forest:
-        this->CreateNewLarva();
         break;
     }
 
+}
+
+void GameBoard::ItemAction(PlanePiece* targetPiece)
+{
+    enum Item
+    {
+        Item_LarvaPlus = 1,
+        Item_LarvaReduce
+    };
+
+    switch (targetPiece->GetItemJudge())
+    {
+    case Item_LarvaPlus:
+        this->CreateNewLarva();
+        break;
+    case Item_LarvaReduce:
+        this->DeleteBackLarva(1);
+        break;
+    }
 }
 
 void GameBoard::GameOver()
@@ -256,6 +284,4 @@ void GameBoard::GameOver()
     {
         larvaList[i]->StateChange(0);
     }
-
-    
 }

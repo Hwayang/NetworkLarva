@@ -45,6 +45,18 @@
     <ClInclude Include="GameElement\GameManager\BoardPiece\WaterPiece.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameElement\GameManager\GameBoard\GameBoard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameElement\GameManager\Item\Item.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameElement\GameManager\Item\Item_LarvaPlus.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameElement\GameManager\Item\Item_LarvaReduce.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\LarvaGame.cpp">
@@ -78,6 +90,18 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameElement\GameManager\BoardPiece\WallPiece.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElement\GameManager\GameBoard\GameBoard.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElement\GameManager\Item\Item.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElement\GameManager\Item\Item_LarvaPlus.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElement\GameManager\Item\Item_LarvaReduce.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

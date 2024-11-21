@@ -9,6 +9,7 @@ public:
 
     virtual ~BoardPiece() {};
     virtual void PieceAction();
+    virtual void PieceAction(int itemJudge);
 
     RECT GetLocation() { return this->pieceLoc; }
     void SetLocation (RECT location);

@@ -6,6 +6,8 @@
 
 class BoardPiece;
 class Larva;
+class Item;
+class PlanePiece;
 
 //전체 타일의 정보를 담고 있는 클래스
 class GameBoard
@@ -21,21 +23,25 @@ public:
     void BoardSetting();
 
     void CreateNewLarva();
+    void DeleteBackLarva(int count);
     void SetDir(int direction);
 
     void GameOver();
-    void TileAction(int tileJudge);
+    void TileAction(BoardPiece* target);
+    void ItemAction(PlanePiece* targetPiece);
 
     //TODO : Getter으로 빼기
     std::vector<Larva*> larvaList;
+    std::vector<Item*> ItemList;
 
 private:
 
     void BoardLocationSetting();
-    int BoardContentsSetting();
+    int BoardTileContentsSetting();
+    int BoardItemContentsSetting();
 
 private:
-    int actionTarget;
+    BoardPiece* actionTarget;
     int Direction;
 
     int larvaLen = 1;

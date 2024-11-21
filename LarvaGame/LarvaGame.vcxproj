@@ -141,6 +141,9 @@
     <ClInclude Include="GameElement\Larva\Larva.h" />
     <ClInclude Include="engine\random\random.h" />
     <ClInclude Include="GameElement\GameManager\BoardPiece\WaterPiece.h" />
+    <ClInclude Include="GameElement\GameManager\Item\Item.h" />
+    <ClInclude Include="GameElement\GameManager\Item\Item_LarvaPlus.h" />
+    <ClInclude Include="GameElement\GameManager\Item\Item_LarvaReduce.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\LarvaGame.cpp" />
@@ -155,6 +158,9 @@
     <ClCompile Include="GameElement\Larva\Larva.cpp" />
     <ClCompile Include="engine\random\random.cpp" />
     <ClCompile Include="GameElement\GameManager\BoardPiece\WaterPiece.cpp" />
+    <ClCompile Include="GameElement\GameManager\Item\Item.cpp" />
+    <ClCompile Include="GameElement\GameManager\Item\Item_LarvaPlus.cpp" />
+    <ClCompile Include="GameElement\GameManager\Item\Item_LarvaReduce.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="engine\LarvaGame.rc" />
