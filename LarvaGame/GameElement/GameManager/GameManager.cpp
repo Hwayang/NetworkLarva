@@ -2,6 +2,7 @@
 #include <functional>
 #include <iostream>
 
+#include"../../engine/random/random.h"
 #include "GameBoard/GameBoard.h"
 
 void GameManager::BoardSetting()
@@ -22,16 +23,19 @@ void GameManager::Move()
 
 GameManager::GameManager(int PlayerCount)
 {
+    Random<int> gen(0, 10000); // 시드를 사용한 랜덤 객체 생성
+
+    int seed = gen();
+
     this->playerCount = PlayerCount;
 
     for (int i = 0; i < this->playerCount; i++)
     {
-        GameBoard* target = new GameBoard(this->tileSize, this->boardSize, this->bufSize, i);
+        GameBoard* target = new GameBoard(this->tileSize, this->boardSize, this->bufSize, i, seed);
 
         this->BoardList.push_back(target);
     }
 }
-
 
 void GameManager::SetDir(int direction)
 {

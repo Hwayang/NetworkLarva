@@ -1,2 +1,9 @@
-﻿  Item.cpp
-  LarvaGame.vcxproj -> C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\x64\Debug\LarvaGame.exe
+﻿  GameBoard.cpp
+C:\Users\HYEON2-206-18\Desktop\NetworkLarva\LarvaGame\GameElement\GameManager\GameBoard\GameBoard.cpp(294,16): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameManager.cpp
+  Larva.cpp
+  LarvaGame.cpp
+  코드를 생성하고 있습니다...
+x64\Debug\PlanePiece.obj : warning LNK4042: 개체가 두 번 이상 지정되었습니다. 나머지는 무시됩니다.
+x64\Debug\WallPiece.obj : warning LNK4042: 개체가 두 번 이상 지정되었습니다. 나머지는 무시됩니다.
+  LarvaGame.vcxproj -> C:\Users\HYEON2-206-18\Desktop\NetworkLarva\x64\Debug\LarvaGame.exe

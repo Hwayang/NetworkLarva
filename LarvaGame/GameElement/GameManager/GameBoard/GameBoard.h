@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "GameBoard.h"
+#include "../../../engine/random/random.h"
 
 class BoardPiece;
 class Larva;
@@ -13,7 +14,7 @@ class PlanePiece;
 class GameBoard
 {
 public:
-    GameBoard(int tileSize, int boardSize, int sizebuf, int boardNum);
+    GameBoard(int tileSize, int boardSize, int sizebuf, int boardNum, unsigned int seed);
     std::vector<std::vector<BoardPiece*>> boardLoc;
 
     int score = 0;
@@ -50,6 +51,10 @@ private:
     int tileSize;
     int sizeBuf;
     int boardNum;
+
+    Random<int> tileRandom; // Å¸ÀÏ ·£´ý °´Ã¼
+    Random<int> itemRandom; // ¾ÆÀÌÅÛ ·£´ý °´Ã¼
+    unsigned randomSeed;
 
     enum Direction
     {

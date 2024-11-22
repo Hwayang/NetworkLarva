@@ -30,7 +30,7 @@ private:
 	RECT targetLoc;
 	RECT curLoc;
 
-	COLORREF color = RGB(255, 0, 0);
+	COLORREF color = RGB(255, 255, 255);
 
 	int direction = 3;
 };
