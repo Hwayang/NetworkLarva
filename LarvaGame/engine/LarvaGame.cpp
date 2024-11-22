@@ -265,6 +265,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         //전체 게임 타이머
         case 1:
             gameManager.Move();
+            gameManager.BoardStateCheck();
             InvalidateRect(hWnd, NULL, TRUE);
             break;
         //아이템 세팅 타이머

@@ -21,6 +21,8 @@ public:
     void SetDir(int direction);
     void BoardSetting();
 
+    void BoardStateCheck();
+
 private:
     void GameOver();
 

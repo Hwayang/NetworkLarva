@@ -13,6 +13,23 @@ void GameManager::BoardSetting()
     }
 }
 
+void GameManager::BoardStateCheck()
+{
+    for (int i = 0; i < playerCount; i++)
+    {
+        if (BoardList[i]->StateCheck() == 0)
+        {
+            this->GameOver();
+            break;
+        }
+    }
+}
+
+void GameManager::GameOver()
+{
+
+}
+
 void GameManager::Move()
 {
     for (int i = 0; i < this->playerCount; i++)

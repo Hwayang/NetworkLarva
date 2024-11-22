@@ -31,6 +31,8 @@ public:
     void TileAction(BoardPiece* target);
     void ItemAction(PlanePiece* targetPiece);
 
+    int StateCheck();
+
     //TODO : Getter¿∏∑Œ ª©±‚
     std::vector<Larva*> larvaList;
     std::vector<Item*> ItemList;
@@ -44,6 +46,8 @@ private:
 private:
     BoardPiece* actionTarget;
     int Direction;
+
+    bool isGameOver = false;
 
     int larvaLen = 1;
 

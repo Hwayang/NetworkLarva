@@ -289,10 +289,22 @@ void GameBoard::ItemAction(PlanePiece* targetPiece)
     }
 }
 
+int GameBoard::StateCheck()
+{
+    if (isGameOver == true)
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
 void GameBoard::GameOver()
 {
     for (int i = larvaList.size() - 1; 0 < i; i--)
     {
         larvaList[i]->StateChange(0);
     }
+
+    isGameOver = true;
 }
