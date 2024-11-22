@@ -27,7 +27,7 @@ void GameManager::BoardStateCheck()
 
 void GameManager::GameOver()
 {
-
+    isGameOver = true;
 }
 
 void GameManager::Move()

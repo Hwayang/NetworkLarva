@@ -31,6 +31,8 @@ public:
 
     int playerCount = 2;
 
+    bool isGameOver = false;
+
     int boardSize = 10;
     int tileSize = 30;
 

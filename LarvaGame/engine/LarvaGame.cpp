@@ -254,6 +254,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 }
             }
 
+            std::wstring debugText = L"GameState" + std::to_wstring(gameManager.isGameOver);
+
+            RECT textRect = { 500, 500, 1500, 600 };
+            DrawText(hdc, debugText.c_str(), -1, &textRect, NULL);
+
             EndPaint(hWnd, &ps);
         }
         break;
