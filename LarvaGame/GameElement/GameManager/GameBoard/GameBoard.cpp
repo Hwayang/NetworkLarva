@@ -102,8 +102,6 @@ void GameBoard::BoardLocationSetting()
 
 #pragma endregion
 
-
-
 void GameBoard::ObjectMove()
 {
     RECT curLarvaLoc = this->larvaList[0]->GetLoc();
@@ -145,8 +143,15 @@ void GameBoard::ObjectMove()
             }
         }
     }
-    
+
+    for (int i = larvaList.size() - 1; i > 0 ; i--)
+    {
+
+        larvaList[i]->SetLoc(larvaList[i - 1]->GetLoc());
+    }
+
     this->larvaList[0]->SetLoc(this->boardLoc[xLoc][yLoc]->GetLocation());
+
     this->actionTarget = this->boardLoc[xLoc][yLoc];
     this->TileAction(actionTarget);
 }
@@ -215,42 +220,32 @@ void GameBoard::CreateNewLarva()
             if (xLoc - 1 == 0)
             {
                 xLoc += 1;
-                yLoc = 0;
-            }
-            else
-            {
-                xLoc -= 1;
-                yLoc = 0;
             }
         }
-        else yLoc -= 0;
+        else yLoc -= 1;
         break;
     }
 
     // 새로운 Larva 생성
     Larva* newLarva = new Larva(this->tileSize, this->boardLoc[xLoc][yLoc]->GetLocation());
 
-    // 이전 Larva와 연결
-    this->larvaList.back()->SetPrevLarva(newLarva);
-
     // 새로운 Larva를 리스트에 추가
     this->larvaList.push_back(newLarva);
-    // 생성된 Larva를 마지막 Larva에 연결
-    this->larvaList[larvaLen - 1]->SetNextLarva(larvaList.back());
 
     larvaLen++;
 }
 
 void GameBoard::DeleteBackLarva(int count)
 {
-    if(this->larvaLen - 1 == 0)
+    if(this->larvaLen - 1 <= 0)
     {
         GameOver();
+        return;
     }
 
     for (int i = 0; i < count; i++)
     {
-        this->larvaList.back()->StateChange(0);
+        this->larvaList.erase(larvaList.end());
     }
 }
 
