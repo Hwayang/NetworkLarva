@@ -157,8 +157,8 @@ void GameBoard::ObjectMove()
 
 void GameBoard::CreateNewLarva()
 {
-    RECT lastLarvaLoc = this->larvaList[larvaLen - 1]->GetLoc();
-    int direction = this->larvaList[larvaLen - 1]->GetDir();
+    RECT lastLarvaLoc = this->larvaList[larvaList.size() - 1]->GetLoc();
+    int direction = this->larvaList[larvaList.size() - 1]->GetDir();
 
     int xLoc = (lastLarvaLoc.left - (boardNum * this->sizeBuf)) / this->tileSize;
     int yLoc = lastLarvaLoc.top / this->tileSize;
