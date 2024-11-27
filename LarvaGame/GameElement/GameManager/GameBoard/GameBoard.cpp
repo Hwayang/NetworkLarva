@@ -40,6 +40,7 @@ int GameBoard::BoardItemContentsSetting()
 
 void GameBoard::LarvaSetting()
 {
+    larvaLen++;
     this->larvaList[0]->SetLoc(this->boardLoc[this->boardSize / 2][this->boardSize / 2]->GetLocation());
 }
 
@@ -132,10 +133,21 @@ void GameBoard::ObjectMove()
         break;
     }
 
+    if (larvaLen > 1)
+    {
+        for (int i = 1; i < larvaList.size(); i++)
+        {
+            if (this->boardLoc[xLoc][yLoc]->GetLocation().left == larvaList[i]->GetLoc().left &&
+                this->boardLoc[xLoc][yLoc]->GetLocation().top == larvaList[i]->GetLoc().top)
+            {
+                GameOver();
+                return;
+            }
+        }
+    }
+    
     this->larvaList[0]->SetLoc(this->boardLoc[xLoc][yLoc]->GetLocation());
-
     this->actionTarget = this->boardLoc[xLoc][yLoc];
-
     this->TileAction(actionTarget);
 }
 
@@ -220,16 +232,22 @@ void GameBoard::CreateNewLarva()
 
     // 이전 Larva와 연결
     this->larvaList.back()->SetPrevLarva(newLarva);
+
     // 새로운 Larva를 리스트에 추가
     this->larvaList.push_back(newLarva);
-
-    larvaLen++;
     // 생성된 Larva를 마지막 Larva에 연결
     this->larvaList[larvaLen - 1]->SetNextLarva(larvaList.back());
+
+    larvaLen++;
 }
 
 void GameBoard::DeleteBackLarva(int count)
 {
+    if(this->larvaLen - 1 == 0)
+    {
+        GameOver();
+    }
+
     for (int i = 0; i < count; i++)
     {
         this->larvaList.back()->StateChange(0);

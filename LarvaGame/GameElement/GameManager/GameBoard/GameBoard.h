@@ -49,7 +49,7 @@ private:
 
     bool isGameOver = false;
 
-    int larvaLen = 1;
+    int larvaLen = 0;
 
     int boardSize;
     int tileSize;

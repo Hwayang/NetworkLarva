@@ -12,14 +12,14 @@
 #define BUFFER_SIZE 512
 #define PORT 9700
 std::string ip = "127.0.0.1";
-int timeoutInSeconds = 10;       //timeoutInSeconds초간 응답이 없는 클라이언트는 timeout 처리
+int timeoutInSeconds = 10;      //timeoutInSeconds초간 응답이 없는 클라이언트는 timeout 처리
 SOCKET serverSocket;
-bool broadcastNow = true;   //서버 내에서 값이 변하면 전송
-int broadcastRate = 30;     //broadcastRate ms(밀리초) 주기로 브로드캐스팅
+bool broadcastNow = true;       //서버 내에서 값이 변하면 전송
+int broadcastRate = 30;         //broadcastRate ms(밀리초) 주기로 브로드캐스팅
 
-std::mutex clientMutex; // 클라이언트 리스트 보호
-std::mutex queueMutex;  // 작업 대기열 보호
-std::condition_variable cv; // 대기열 알림
+std::mutex clientMutex;         // 클라이언트 리스트 보호
+std::mutex queueMutex;          // 작업 대기열 보호
+std::condition_variable cv;     // 대기열 알림
 
 
 struct Player {
