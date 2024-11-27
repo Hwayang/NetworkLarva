@@ -146,7 +146,6 @@ void GameBoard::ObjectMove()
 
     for (int i = larvaList.size() - 1; i > 0 ; i--)
     {
-
         larvaList[i]->SetLoc(larvaList[i - 1]->GetLoc());
     }
 
@@ -237,7 +236,7 @@ void GameBoard::CreateNewLarva()
 
 void GameBoard::DeleteBackLarva(int count)
 {
-    if(this->larvaLen - 1 <= 0)
+    if(this->larvaList.size() <= 1)
     {
         GameOver();
         return;
@@ -245,7 +244,7 @@ void GameBoard::DeleteBackLarva(int count)
 
     for (int i = 0; i < count; i++)
     {
-        this->larvaList.erase(larvaList.end());
+        this->larvaList.erase(larvaList.end() - 1);
     }
 }
 
