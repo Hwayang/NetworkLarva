@@ -139,7 +139,7 @@ HBRUSH MyBrush, OldBrush;
 
 #pragma endregion
 
-
+ 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)

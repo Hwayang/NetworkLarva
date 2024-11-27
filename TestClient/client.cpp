@@ -8,7 +8,7 @@
 
 #define BUFFER_SIZE 512
 #define PORT 9700
-#define TICK_RATE 500        // 수가 클수록 빈도수가 적어짐
+#define TICK_RATE 1000        // 수가 클수록 빈도수가 적어짐
                              // 빈도수가 너무 낮으면 시간차가 생깁니다. 게임의 업데이트 속도보다 2,3배 빠르게 해주는게 안정적일겁니다.
 std::string ip = "127.0.0.1";
 int maxRecvErrorCount = 20; //recv에러가 maxRecvErrorCount이상이면 연결 종료

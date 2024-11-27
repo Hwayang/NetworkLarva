@@ -147,9 +147,11 @@ void GameBoard::ObjectMove()
     for (int i = larvaList.size() - 1; i > 0 ; i--)
     {
         larvaList[i]->SetLoc(larvaList[i - 1]->GetLoc());
+        larvaList[i]->SetDir(larvaList[i - 1]->GetDir());
     }
 
     this->larvaList[0]->SetLoc(this->boardLoc[xLoc][yLoc]->GetLocation());
+    this->larvaList[0]->SetDir(this->Direction);
 
     this->actionTarget = this->boardLoc[xLoc][yLoc];
     this->TileAction(actionTarget);
@@ -165,64 +167,68 @@ void GameBoard::CreateNewLarva()
 
     switch (direction)
     {
-    case 0:
-        if (xLoc + 1 >= this->boardSize - 1)
+        case 0:
         {
-            if (yLoc == 0)
+            if (xLoc + 1 >= this->boardSize - 1)
             {
-                xLoc = this->boardSize - 1;
-                yLoc += 1;
+                if (yLoc <= 0)
+                {
+                    xLoc = this->boardSize - 1;
+                    yLoc += 1;
+                }
+                else
+                {
+                    xLoc = this->boardSize - 1;
+                    yLoc -= 1;
+                }
             }
-            else
-            {
-                xLoc = this->boardSize - 1;
-                yLoc -= 1;
-            }
+            else xLoc += 1;
+            break;
         }
-        else xLoc += 1;
-        break;
-
-    case 1:
-        if (yLoc >= this->boardSize - 1)
+        case 1:
         {
-            if (xLoc - 1 == 0)
+            if (yLoc >= this->boardSize - 1)
             {
-                xLoc += 1;
-                yLoc = this->boardSize - 1;
+                if (xLoc - 1 <= 0)
+                {
+                    xLoc += 1;
+                    yLoc = this->boardSize - 1;
+                }
+                else
+                {
+                    xLoc -= 1;
+                    yLoc = this->boardSize - 1;
+                }
             }
-            else
-            {
-                xLoc -= 1;
-                yLoc = this->boardSize - 1;
-            }
+            else yLoc += 1;
+            break;
         }
-        else yLoc += 1;
-        break;
-
-    case 2:
-        if (xLoc <= 0)
+        case 2:
         {
-            if (yLoc - 1 > 0)
+            if (xLoc <= 0)
             {
-                yLoc -= 1;
+                if (yLoc - 1 > 0)
+                {
+                    yLoc -= 1;
+                    xLoc = 0;
+                }
             }
-        }
-        else
+            else xLoc -= 1;
+            break;
+        } 
+        case 3:
         {
-            xLoc -= 1;
-        }
-        break;
-
-    case 3:
-        if (yLoc <= 0)
-        {
-            if (xLoc - 1 == 0)
+            if (yLoc <= 0)
             {
-                xLoc += 1;
+                if (xLoc - 1 > 0)
+                {
+                    xLoc -= 1;
+                    yLoc = 0;
+                }
             }
+            else yLoc -= 1;
+            break;
         }
-        else yLoc -= 1;
-        break;
     }
 
     // 货肺款 Larva 积己
