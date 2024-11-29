@@ -251,6 +251,7 @@ void GameBoard::DeleteBackLarva(int count)
     for (int i = 0; i < count; i++)
     {
         this->larvaList.erase(larvaList.end() - 1);
+        larvaLen--;
     }
 }
 
@@ -273,6 +274,7 @@ void GameBoard::TileAction(BoardPiece* target)
     {
     case Plane:
         this->ItemAction(dynamic_cast<PlanePiece*>(target));
+        dynamic_cast<PlanePiece*>(target)->DeleteItem();
         break;
 
     case Wall:
@@ -305,6 +307,8 @@ void GameBoard::ItemAction(PlanePiece* targetPiece)
         this->DeleteBackLarva(1);
         break;
     }
+
+    this->score = this->larvaLen;
 }
 
 int GameBoard::StateCheck()

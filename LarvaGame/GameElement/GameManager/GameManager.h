@@ -33,7 +33,7 @@ public:
 
     bool isGameOver = false;
 
-    int boardSize = 10;
+    int boardSize = 15;
     int tileSize = 30;
 
     int gameTime = 1000;

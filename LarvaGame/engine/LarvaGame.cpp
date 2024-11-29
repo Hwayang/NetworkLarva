@@ -254,6 +254,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 }
             }
 
+            for (int i = 0; i < gameManager.playerCount; i++)
+            {
+                std::wstring scoreText = L"Socre" + std::to_wstring(gameManager.BoardList[i]->score);
+
+                RECT textRect = { 500, 0, 1500, 200 };
+                DrawText(hdc, scoreText.c_str(), -1, &textRect, DT_CENTER);
+            }
+
+
             std::wstring debugText = L"GameState" + std::to_wstring(gameManager.isGameOver);
 
             RECT textRect = { 500, 500, 1500, 600 };

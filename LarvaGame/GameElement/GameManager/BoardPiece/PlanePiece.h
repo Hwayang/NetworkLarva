@@ -11,6 +11,7 @@ public:
 	virtual void PieceAction() override;
 	virtual void PieceAction(int itemJudge) override;
 
+	void DeleteItem();
 	int GetItemJudge();
 	Item* GetItem() { return itemSlot; }
 

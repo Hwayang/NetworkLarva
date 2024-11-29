@@ -33,6 +33,12 @@ void PlanePiece::PieceAction(int itemJudge)
 	}
 }
 
+void PlanePiece::DeleteItem()
+{
+	delete(this->itemSlot);
+	this->itemSlot = nullptr;
+}
+
 int PlanePiece::GetItemJudge()
 {
 	if (itemSlot != nullptr)
