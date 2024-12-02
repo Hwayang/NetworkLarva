@@ -1,23 +1,39 @@
 #include "GameManager.h"
+
 #include <functional>
 #include <iostream>
 
-#include"../../engine/random/random.h"
+#include "../../engine/random/random.h"
 #include "GameBoard/GameBoard.h"
+
+GameManager::GameManager(int playerCount)
+    : playerCount(playerCount)
+{
+    Random<int> gen(0, 10000); // 시드를 사용한 랜덤 객체 생성
+    int seed = gen();
+
+    bufSize = boardSize * tileSize + 100;
+
+    for (int i = 0; i < this->playerCount; ++i)
+    {
+        auto target = std::make_unique<GameBoard>(this->tileSize, this->boardSize, this->bufSize, i, seed);
+        this->BoardList.push_back(std::move(target));
+    }
+}
 
 void GameManager::BoardSetting()
 {
-    for (int i = 0; i < this->playerCount; i++)
+    for (auto& board : this->BoardList)
     {
-        this->BoardList[i]->BoardSetting();
+        board->BoardSetting();
     }
 }
 
 void GameManager::BoardStateCheck()
 {
-    for (int i = 0; i < playerCount; i++)
+    for (auto& board : BoardList)
     {
-        if (BoardList[i]->StateCheck() == 0)
+        if (board->StateCheck() == 0)
         {
             this->GameOver();
             break;
@@ -32,34 +48,28 @@ void GameManager::GameOver()
 
 void GameManager::Move()
 {
-    for (int i = 0; i < this->playerCount; i++)
+    std::lock_guard<std::mutex> lock(gameStateMutex); // 동기화 처리
+    for (auto& board : this->BoardList)
     {
-        this->BoardList[i]->ObjectMove();
-    }
-}
-
-GameManager::GameManager(int PlayerCount)
-{
-    Random<int> gen(0, 10000); // 시드를 사용한 랜덤 객체 생성
-
-    int seed = gen();
-
-    this->playerCount = PlayerCount;
-
-    for (int i = 0; i < this->playerCount; i++)
-    {
-        GameBoard* target = new GameBoard(this->tileSize, this->boardSize, this->bufSize, i, seed);
-
-        this->BoardList.push_back(target);
+        board->ObjectMove();
     }
 }
 
 void GameManager::SetDir(int direction)
 {
-    //TODO: 서버에서 받아온 데이터로 조정
-
-    for (int i = 0; i < this->playerCount; i++)
+    // TODO: 서버에서 받아온 데이터로 조정
+    std::lock_guard<std::mutex> lock(gameStateMutex); // 동기화 처리
+    for (auto& board : this->BoardList)
     {
-        this->BoardList[i]->SetDir(direction);
+        board->SetDir(direction);
     }
 }
+
+void GameManager::UpdateFromNetwork(const GameState& gameState)
+{
+    std::lock_guard<std::mutex> lock(gameStateMutex);
+    // gameState를 사용하여 GameManager의 상태를 업데이트
+    // 예를 들어, 플레이어 위치를 업데이트합니다.
+    // 이 부분은 실제 GameState 구조체에 따라 구현해야 합니다.
+}
+

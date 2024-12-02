@@ -57,6 +57,12 @@
     <ClInclude Include="GameElement\GameManager\Item\Item_LarvaReduce.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="GameElement\GameManager\Client\Client.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameElement\GameManager\GameState\GameState.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\LarvaGame.cpp">
@@ -102,6 +108,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameElement\GameManager\Item\Item_LarvaReduce.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElement\GameManager\Client\Client.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameElement\GameManager\GameState\GameState.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

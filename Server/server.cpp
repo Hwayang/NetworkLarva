@@ -28,6 +28,7 @@ struct Player {
     int playerY;
     //...
 };
+
 struct GameState {     //주고 받을 게임 변수의 구조체 - 서버의 구조체와 동일하게 할 것!
     Player p1;
     Player p2;

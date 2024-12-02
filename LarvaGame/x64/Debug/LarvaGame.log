@@ -1,5 +1,802 @@
-﻿  GameManager.cpp
+﻿  LarvaGame.cpp
+  Client.cpp
+  GameManager.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(103,1): warning C4005: 'AF_IPX': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(457,1):
+  'AF_IPX'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(147,1): warning C4005: 'AF_MAX': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(476,1):
+  'AF_MAX'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(187,1): warning C4005: 'SO_DONTLINGER': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(399,1):
+  'SO_DONTLINGER'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(240,25): error C2011: 'sockaddr': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(482,8):
+  'sockaddr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(442,5): error C2143: 구문 오류: '}'이(가) '상수' 앞에 없습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(442,5): error C2059: 구문 오류: '상수'
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(496,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(496,10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(496,20): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(577,1): warning C4005: 'IN_CLASSA': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(284,1):
+  'IN_CLASSA'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(583,1): warning C4005: 'IN_CLASSB': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(290,1):
+  'IN_CLASSB'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(589,1): warning C4005: 'IN_CLASSC': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(296,1):
+  'IN_CLASSC'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(600,1): warning C4005: 'INADDR_ANY': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(301,1):
+  'INADDR_ANY'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(602,1): warning C4005: 'INADDR_BROADCAST': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(303,1):
+  'INADDR_BROADCAST'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(638,28): error C2011: 'sockaddr_in': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(309,8):
+  'sockaddr_in' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(136,23): error C2011: 'fd_set': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(65,16):
+  'fd_set' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(171,1): warning C4005: 'FD_SET': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(99,1):
+  'FD_SET'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(180,16): error C2011: 'timeval': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(108,8):
+  'timeval' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(236,17): error C2011: 'hostent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(164,9):
+  'hostent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(249,16): error C2011: 'netent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(177,9):
+  'netent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(256,17): error C2011: 'servent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(184,9):
+  'servent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(268,18): error C2011: 'protoent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(196,9):
+  'protoent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(364,24): error C2011: 'WSAData': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(319,16):
+  'WSAData' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(462,18): error C2011: 'sockproto': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(491,8):
+  'sockproto' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(504,16): error C2011: 'linger': 'struct' 형식 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(528,9):
+  'linger' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(517,1): warning C4005: 'SOMAXCONN': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(541,1):
+  'SOMAXCONN'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(551,1): warning C4005: 'FD_READ': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(559,1):
+  'FD_READ'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(554,1): warning C4005: 'FD_WRITE': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(560,1):
+  'FD_WRITE'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(557,1): warning C4005: 'FD_OOB': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(561,1):
+  'FD_OOB'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(560,1): warning C4005: 'FD_ACCEPT': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(562,1):
+  'FD_ACCEPT'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(563,1): warning C4005: 'FD_CONNECT': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(563,1):
+  'FD_CONNECT'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(566,1): warning C4005: 'FD_CLOSE': 매크로 재정의
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(564,1):
+  'FD_CLOSE'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1631,1): error C2375: 'accept': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(739,19):
+  'accept' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1653,1): error C2375: 'bind': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(744,16):
+  'bind' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1674,1): error C2375: 'closesocket': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(749,16):
+  'closesocket' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1691,1): error C2375: 'connect': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(751,16):
+  'connect' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1712,1): error C2375: 'ioctlsocket': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(756,16):
+  'ioctlsocket' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1735,1): error C2375: 'getpeername': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(761,16):
+  'getpeername' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1756,1): error C2375: 'getsockname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(766,16):
+  'getsockname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1777,1): error C2375: 'getsockopt': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(771,16):
+  'getsockopt' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1802,1): error C2375: 'htonl': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(778,19):
+  'htonl' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1819,1): error C2375: 'htons': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(780,20):
+  'htons' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1837,1): error C2375: 'inet_addr': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(782,26):
+  'inet_addr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1855,1): error C2375: 'inet_ntoa': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(784,23):
+  'inet_ntoa' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1955,1): error C2375: 'listen': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(786,16):
+  'listen' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1974,1): error C2375: 'ntohl': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(790,19):
+  'ntohl' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1991,1): error C2375: 'ntohs': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(792,20):
+  'ntohs' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2008,1): error C2375: 'recv': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(794,16):
+  'recv' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2031,1): error C2375: 'recvfrom': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(800,16):
+  'recvfrom' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2058,1): error C2375: 'select': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(808,16):
+  'select' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2083,1): error C2375: 'send': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(815,16):
+  'send' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2106,1): error C2375: 'sendto': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(821,16):
+  'sendto' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2133,1): error C2375: 'setsockopt': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(829,16):
+  'setsockopt' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2158,1): error C2375: 'shutdown': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(836,16):
+  'shutdown' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2178,1): error C2375: 'socket': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(840,19):
+  'socket' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2203,1): error C2375: 'gethostbyaddr': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(847,33):
+  'gethostbyaddr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2225,1): error C2375: 'gethostbyname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(852,33):
+  'gethostbyname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2242,1): error C2375: 'gethostname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(854,16):
+  'gethostname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2282,1): error C2375: 'getservbyport': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(858,33):
+  'getservbyport' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2301,1): error C2375: 'getservbyname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(862,33):
+  'getservbyname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2320,1): error C2375: 'getprotobynumber': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(866,34):
+  'getprotobynumber' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2337,1): error C2375: 'getprotobyname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(868,34):
+  'getprotobyname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2357,1): error C2375: 'WSAStartup': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(872,16):
+  'WSAStartup' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2377,1): error C2375: 'WSACleanup': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(876,16):
+  'WSACleanup' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2394,1): error C2375: 'WSASetLastError': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(878,17):
+  'WSASetLastError' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2411,1): error C2375: 'WSAGetLastError': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(880,16):
+  'WSAGetLastError' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2432,1): error C2375: 'WSAIsBlocking': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(882,17):
+  'WSAIsBlocking' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2450,1): error C2375: 'WSAUnhookBlockingHook': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(884,16):
+  'WSAUnhookBlockingHook' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2468,1): error C2375: 'WSASetBlockingHook': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(886,20):
+  'WSASetBlockingHook' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2486,1): error C2375: 'WSACancelBlockingCall': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(888,16):
+  'WSACancelBlockingCall' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2504,1): error C2375: 'WSAAsyncGetServByName': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(890,19):
+  'WSAAsyncGetServByName' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2532,1): error C2375: 'WSAAsyncGetServByPort': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(898,19):
+  'WSAAsyncGetServByPort' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2560,1): error C2375: 'WSAAsyncGetProtoByName': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(906,19):
+  'WSAAsyncGetProtoByName' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2586,1): error C2375: 'WSAAsyncGetProtoByNumber': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(913,19):
+  'WSAAsyncGetProtoByNumber' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2612,1): error C2375: 'WSAAsyncGetHostByName': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(920,19):
+  'WSAAsyncGetHostByName' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2638,1): error C2375: 'WSAAsyncGetHostByAddr': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(927,19):
+  'WSAAsyncGetHostByAddr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2668,1): error C2375: 'WSACancelAsyncRequest': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(936,16):
+  'WSACancelAsyncRequest' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2686,1): error C2375: 'WSAAsyncSelect': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(938,16):
+  'WSAAsyncSelect' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(4318,1): error C2059: 구문 오류: '}'
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(4318,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\Client\Client.h(7,1): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\Client\Client.h(7,1): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(44,12): error C3646: 'client': 알 수 없는 재정의 지정자입니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(44,18): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'GameElement/GameManager/GameManager.cpp'을(를) 컴파일하는 중)
+  
   Larva.cpp
-  LarvaGame.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(103,1): warning C4005: 'AF_IPX': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(457,1):
+  'AF_IPX'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(147,1): warning C4005: 'AF_MAX': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(476,1):
+  'AF_MAX'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(187,1): warning C4005: 'SO_DONTLINGER': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(399,1):
+  'SO_DONTLINGER'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(240,25): error C2011: 'sockaddr': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(482,8):
+  'sockaddr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(442,5): error C2143: 구문 오류: '}'이(가) '상수' 앞에 없습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(442,5): error C2059: 구문 오류: '상수'
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(496,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(496,10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(496,20): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(577,1): warning C4005: 'IN_CLASSA': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(284,1):
+  'IN_CLASSA'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(583,1): warning C4005: 'IN_CLASSB': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(290,1):
+  'IN_CLASSB'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(589,1): warning C4005: 'IN_CLASSC': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(296,1):
+  'IN_CLASSC'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(600,1): warning C4005: 'INADDR_ANY': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(301,1):
+  'INADDR_ANY'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(602,1): warning C4005: 'INADDR_BROADCAST': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(303,1):
+  'INADDR_BROADCAST'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\ws2def.h(638,28): error C2011: 'sockaddr_in': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(309,8):
+  'sockaddr_in' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(136,23): error C2011: 'fd_set': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(65,16):
+  'fd_set' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(171,1): warning C4005: 'FD_SET': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(99,1):
+  'FD_SET'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(180,16): error C2011: 'timeval': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(108,8):
+  'timeval' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(236,17): error C2011: 'hostent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(164,9):
+  'hostent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(249,16): error C2011: 'netent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(177,9):
+  'netent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(256,17): error C2011: 'servent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(184,9):
+  'servent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(268,18): error C2011: 'protoent': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(196,9):
+  'protoent' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(364,24): error C2011: 'WSAData': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(319,16):
+  'WSAData' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(462,18): error C2011: 'sockproto': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(491,8):
+  'sockproto' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(504,16): error C2011: 'linger': 'struct' 형식 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(528,9):
+  'linger' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(517,1): warning C4005: 'SOMAXCONN': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(541,1):
+  'SOMAXCONN'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(551,1): warning C4005: 'FD_READ': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(559,1):
+  'FD_READ'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(554,1): warning C4005: 'FD_WRITE': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(560,1):
+  'FD_WRITE'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(557,1): warning C4005: 'FD_OOB': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(561,1):
+  'FD_OOB'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(560,1): warning C4005: 'FD_ACCEPT': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(562,1):
+  'FD_ACCEPT'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(563,1): warning C4005: 'FD_CONNECT': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(563,1):
+  'FD_CONNECT'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(566,1): warning C4005: 'FD_CLOSE': 매크로 재정의
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(564,1):
+  'FD_CLOSE'의 이전 정의를 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1631,1): error C2375: 'accept': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(739,19):
+  'accept' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1653,1): error C2375: 'bind': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(744,16):
+  'bind' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1674,1): error C2375: 'closesocket': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(749,16):
+  'closesocket' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1691,1): error C2375: 'connect': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(751,16):
+  'connect' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1712,1): error C2375: 'ioctlsocket': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(756,16):
+  'ioctlsocket' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1735,1): error C2375: 'getpeername': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(761,16):
+  'getpeername' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1756,1): error C2375: 'getsockname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(766,16):
+  'getsockname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1777,1): error C2375: 'getsockopt': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(771,16):
+  'getsockopt' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1802,1): error C2375: 'htonl': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(778,19):
+  'htonl' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1819,1): error C2375: 'htons': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(780,20):
+  'htons' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1837,1): error C2375: 'inet_addr': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(782,26):
+  'inet_addr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1855,1): error C2375: 'inet_ntoa': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(784,23):
+  'inet_ntoa' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1955,1): error C2375: 'listen': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(786,16):
+  'listen' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1974,1): error C2375: 'ntohl': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(790,19):
+  'ntohl' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(1991,1): error C2375: 'ntohs': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(792,20):
+  'ntohs' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2008,1): error C2375: 'recv': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(794,16):
+  'recv' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2031,1): error C2375: 'recvfrom': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(800,16):
+  'recvfrom' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2058,1): error C2375: 'select': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(808,16):
+  'select' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2083,1): error C2375: 'send': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(815,16):
+  'send' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2106,1): error C2375: 'sendto': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(821,16):
+  'sendto' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2133,1): error C2375: 'setsockopt': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(829,16):
+  'setsockopt' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2158,1): error C2375: 'shutdown': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(836,16):
+  'shutdown' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2178,1): error C2375: 'socket': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(840,19):
+  'socket' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2203,1): error C2375: 'gethostbyaddr': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(847,33):
+  'gethostbyaddr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2225,1): error C2375: 'gethostbyname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(852,33):
+  'gethostbyname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2242,1): error C2375: 'gethostname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(854,16):
+  'gethostname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2282,1): error C2375: 'getservbyport': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(858,33):
+  'getservbyport' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2301,1): error C2375: 'getservbyname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(862,33):
+  'getservbyname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2320,1): error C2375: 'getprotobynumber': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(866,34):
+  'getprotobynumber' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2337,1): error C2375: 'getprotobyname': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(868,34):
+  'getprotobyname' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2357,1): error C2375: 'WSAStartup': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(872,16):
+  'WSAStartup' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2377,1): error C2375: 'WSACleanup': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(876,16):
+  'WSACleanup' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2394,1): error C2375: 'WSASetLastError': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(878,17):
+  'WSASetLastError' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2411,1): error C2375: 'WSAGetLastError': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(880,16):
+  'WSAGetLastError' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2432,1): error C2375: 'WSAIsBlocking': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(882,17):
+  'WSAIsBlocking' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2450,1): error C2375: 'WSAUnhookBlockingHook': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(884,16):
+  'WSAUnhookBlockingHook' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2468,1): error C2375: 'WSASetBlockingHook': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(886,20):
+  'WSASetBlockingHook' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2486,1): error C2375: 'WSACancelBlockingCall': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(888,16):
+  'WSACancelBlockingCall' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2504,1): error C2375: 'WSAAsyncGetServByName': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(890,19):
+  'WSAAsyncGetServByName' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2532,1): error C2375: 'WSAAsyncGetServByPort': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(898,19):
+  'WSAAsyncGetServByPort' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2560,1): error C2375: 'WSAAsyncGetProtoByName': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(906,19):
+  'WSAAsyncGetProtoByName' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2586,1): error C2375: 'WSAAsyncGetProtoByNumber': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(913,19):
+  'WSAAsyncGetProtoByNumber' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2612,1): error C2375: 'WSAAsyncGetHostByName': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(920,19):
+  'WSAAsyncGetHostByName' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2638,1): error C2375: 'WSAAsyncGetHostByAddr': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(927,19):
+  'WSAAsyncGetHostByAddr' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2668,1): error C2375: 'WSACancelAsyncRequest': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(936,16):
+  'WSACancelAsyncRequest' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(2686,1): error C2375: 'WSAAsyncSelect': 재정의. 연결이 다릅니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock.h(938,16):
+  'WSAAsyncSelect' 선언을 참조하십시오.
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(4318,1): error C2059: 구문 오류: '}'
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsock2.h(4318,1): error C2143: 구문 오류: ';'이(가) '}' 앞에 없습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\Client\Client.h(7,1): error C2143: 구문 오류: ';'이(가) '{' 앞에 없습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\Client\Client.h(7,1): error C2447: '{': 함수 헤더가 없습니다. 이전 스타일의 형식 목록입니까?
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(44,12): error C3646: 'client': 알 수 없는 재정의 지정자입니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\LarvaGame\GameElement\GameManager\GameManager.h(44,18): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  (소스 파일 'GameElement/Larva/Larva.cpp'을(를) 컴파일하는 중)
+  
+  GameState.cpp
   코드를 생성하고 있습니다...
-  LarvaGame.vcxproj -> C:\Users\hwaya\OneDrive\바탕 화면\공부\청강대\NetworkLarva\x64\Debug\LarvaGame.exe

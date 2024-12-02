@@ -136,6 +136,7 @@
     <ClInclude Include="engine\targetver.h" />
     <ClInclude Include="GameElement\GameManager\BoardPiece\ForestPiece.h" />
     <ClInclude Include="GameElement\GameManager\BoardPiece\BoardPiece.h" />
+    <ClInclude Include="GameElement\GameManager\Client\Client.h" />
     <ClInclude Include="GameElement\GameManager\GameBoard\GameBoard.h" />
     <ClInclude Include="GameElement\GameManager\GameManager.h" />
     <ClInclude Include="GameElement\Larva\Larva.h" />
@@ -144,6 +145,7 @@
     <ClInclude Include="GameElement\GameManager\Item\Item.h" />
     <ClInclude Include="GameElement\GameManager\Item\Item_LarvaPlus.h" />
     <ClInclude Include="GameElement\GameManager\Item\Item_LarvaReduce.h" />
+    <ClInclude Include="GameElement\GameManager\GameState\GameState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine\LarvaGame.cpp" />
@@ -153,6 +155,7 @@
     <ClCompile Include="GameElement\GameManager\BoardPiece\PlanePiece.h" />
     <ClCompile Include="GameElement\GameManager\BoardPiece\WallPiece.cpp" />
     <ClCompile Include="GameElement\GameManager\BoardPiece\WallPiece.h" />
+    <ClCompile Include="GameElement\GameManager\Client\Client.cpp" />
     <ClCompile Include="GameElement\GameManager\GameBoard\GameBoard.cpp" />
     <ClCompile Include="GameElement\GameManager\GameManager.cpp" />
     <ClCompile Include="GameElement\Larva\Larva.cpp" />
@@ -161,6 +164,7 @@
     <ClCompile Include="GameElement\GameManager\Item\Item.cpp" />
     <ClCompile Include="GameElement\GameManager\Item\Item_LarvaPlus.cpp" />
     <ClCompile Include="GameElement\GameManager\Item\Item_LarvaReduce.cpp" />
+    <ClCompile Include="GameElement\GameManager\GameState\GameState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="engine\LarvaGame.rc" />

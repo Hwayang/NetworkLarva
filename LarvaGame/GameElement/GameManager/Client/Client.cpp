@@ -6,12 +6,12 @@
 #include <thread>
 #include <stdexcept>
 
+#include "Client.h"
+
 #define BUFFER_SIZE 512
 #define PORT 9700
 #define TICK_RATE 1000        // 수가 클수록 빈도수가 적어짐
-                             // 빈도수가 너무 낮으면 시간차가 생깁니다. 게임의 업데이트 속도보다 2,3배 빠르게 해주는게 안정적일겁니다.
-std::string ip = "127.0.0.1";
-int maxRecvErrorCount = 20; //recv에러가 maxRecvErrorCount이상이면 연결 종료
+                              // 빈도수가 너무 낮으면 시간차가 생깁니다. 게임의 업데이트 속도보다 2,3배 빠르게 해주는게 안정적일겁니다.
 
 /*
 주의!
@@ -24,25 +24,13 @@ int maxRecvErrorCount = 20; //recv에러가 maxRecvErrorCount이상이면 연결 종료
 10054 - 연결되지 않음 - 서버 혹은 클라이언트가 켜져있지 않음
 */
 
-//주고 받을 게임 변수의 구조체 - 서버의 구조체와 동일하게 할 것!
-struct Player {
-    int playernum;  //1P, 2P를 알려주는 변수
-    int playerX;
-    int playerY;
-    //...
-};
-struct GameState {    //오직 받기만 한다.
-    Player p1;
-    Player p2;
-    //...
-};
-
-void printLastError(const std::string& message) {
+void Client::printLastError(const std::string& message) {
     int error = WSAGetLastError();
     std::cerr << message << " Error code: " << error << std::endl;
 }
 
-int main(int argc, char* argv[]) {
+void Client::connectServer()
+{
     int result;
     int recvErrorCount = 0;
 
@@ -53,30 +41,36 @@ int main(int argc, char* argv[]) {
     result = WSAStartup(MAKEWORD(2, 2), &wsaData);
     if (result != 0) {
         printLastError("WSAStartup failed");
+        return;
     }
 
     //UDP 소켓 생성
-    SOCKET CLIENT_LISTocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-    if (CLIENT_LISTocket == INVALID_SOCKET) {
-        printLastError("socket failed");
+    SOCKET clientSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    if (clientSocket == INVALID_SOCKET) {
+        printLastError("Socket creation failed");
+        WSACleanup();
+        return;
     }
 
     //소켓을 non-blocking mode로 수행(수신 여부와 상관없이 계속 송신)
     u_long nonBlockingMode = 1;
-    if (ioctlsocket(CLIENT_LISTocket, FIONBIO, &nonBlockingMode) != 0) {
+    if (ioctlsocket(clientSocket, FIONBIO, &nonBlockingMode) != 0) {
         printLastError("ioctlsocket failed");
     }
 
-    //서버 주소와 포트
-    sockaddr_in serverAddr;
+    // Server address and port
+    sockaddr_in serverAddr = {};
     serverAddr.sin_family = AF_INET;
     serverAddr.sin_port = htons(PORT);
     serverAddr.sin_addr.s_addr = inet_addr(ip.c_str());
 
+    // Select player number
+    int playerNumber;
+    std::cout << "Enter player number (1 or 2): ";
+    std::cin >> playerNumber;
+
     //게임 최초 초기화 수행할 것
     //...
-    GameState cGameState;
-
     //1P
     cGameState.p1.playernum = 1;
     cGameState.p1.playerX = 70;
@@ -87,13 +81,43 @@ int main(int argc, char* argv[]) {
     cGameState.p2.playerX = 270;
     cGameState.p2.playerY = 100;
 
+    // Start the game loop in a separate thread
+    std::thread gameThread(&Client::GameLoop, this, playerNumber, clientSocket, serverAddr);
+
+    // Main thread can handle other tasks here
+    // For example, handling user inputs or GUI updates
+
+    // Wait for the game thread to finish
+    gameThread.join();
+
+    // Cleanup
+    closesocket(clientSocket);
+    WSACleanup();
+}
+
+GameState Client::GetClientInfo()
+{
+    return cGameState;
+}
+
+
+void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
+{
+    int result;
+    int recvErrorCount = 0;
 
     //로직 수행 전 설정
     std::chrono::milliseconds tickInterval(static_cast<int>(TICK_RATE));
     char buffer[BUFFER_SIZE];
     auto nextTick = std::chrono::steady_clock::now() + tickInterval;
 
-    //테스트용 플레이어 고르기
+
+    //서버 주소와 포트
+    sockaddr_in serverAddr;
+    serverAddr.sin_family = AF_INET;
+    serverAddr.sin_port = htons(PORT);
+    serverAddr.sin_addr.s_addr = inet_addr(ip.c_str());
+
     int p;
     std::cin >> p;
 
@@ -138,7 +162,7 @@ int main(int argc, char* argv[]) {
         }
 
         //서버에 전송
-        result = sendto(CLIENT_LISTocket, buffer, BUFFER_SIZE, 0, (sockaddr*)&serverAddr, sizeof(serverAddr));
+        result = sendto(clientSocket, buffer, BUFFER_SIZE, 0, (sockaddr*)&serverAddr, sizeof(serverAddr));
         if (result == SOCKET_ERROR) {
             printLastError("input sendto failed");
         }
@@ -146,7 +170,7 @@ int main(int argc, char* argv[]) {
         //서버로부터 게임 입력을 받음
         sockaddr_in fromAddr;
         int fromAddrSize = sizeof(fromAddr);
-        result = recvfrom(CLIENT_LISTocket, buffer, BUFFER_SIZE, 0, (sockaddr*)&fromAddr, &fromAddrSize);
+        result = recvfrom(clientSocket, buffer, BUFFER_SIZE, 0, (sockaddr*)&fromAddr, &fromAddrSize);
         if (result == SOCKET_ERROR) {
             printLastError("update recvfrom failed");
             ++recvErrorCount;
@@ -216,7 +240,6 @@ int main(int argc, char* argv[]) {
     }
 
 
-    closesocket(CLIENT_LISTocket);
-    WSACleanup();
-    return 0;
 }
+
+
