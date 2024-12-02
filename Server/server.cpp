@@ -22,17 +22,30 @@ std::mutex queueMutex;          // 작업 대기열 보호
 std::condition_variable cv;     // 대기열 알림
 
 
-struct Player {
+class Player
+{
+public:
     int playernum;  //1P, 2P를 알려주는 변수
-    int playerX;
-    int playerY;
+
+    int defaultPlayerX;
+    int defaultPlayerY;
+
+    int direction;
+    int score;
     //...
 };
 
-struct GameState {     //주고 받을 게임 변수의 구조체 - 서버의 구조체와 동일하게 할 것!
-    Player p1;
-    Player p2;
-    //...
+class GameState //주고 받을 게임 변수의 구조체 - 서버의 구조체와 동일하게 할 것!
+{
+public:
+    std::vector<Player*> playerList;
+
+    /*
+    * GameStateInfo
+        GameOver  : 0
+        GameStart : 1
+    */
+    int gameState;
 };
 
 GameState gameState;
@@ -69,32 +82,20 @@ void receiverThread() {
         int offset = 0;
         std::memcpy(&received.playernum, &buffer[offset], sizeof(received.playernum));      //몇 P인지 분석
         offset += sizeof(received.playernum);
-        std::memcpy(&received.playerX, &buffer[offset], sizeof(received.playerX));
-        offset += sizeof(received.playerX);
-        std::memcpy(&received.playerY, &buffer[offset], sizeof(received.playerY));
-        offset += sizeof(received.playerY);
+        std::memcpy(&received.direction, &buffer[offset], sizeof(received.direction));
+        offset += sizeof(received.direction);
+        std::memcpy(&received.score, &buffer[offset], sizeof(received.score));
+        offset += sizeof(received.score);
 
-        if (received.playernum == 1)
+        for (int i = 0; i < gameState.playerList.size(); i++)
         {
-            if (received.playerX != gameState.p1.playerX || received.playerY != gameState.p1.playerY)
+            if(received.direction != gameState.playerList[i]->direction || received.score != gameState.playerList[i]->score)
             {
-                // 작업 대기열에 추가
                 std::lock_guard<std::mutex> lock(queueMutex);
                 workQueue.push({ clientAddr, received });
                 cv.notify_one(); // 처리 스레드에 알림
             }
         }
-        else if (received.playernum == 2)
-        {
-            if (received.playerX != gameState.p2.playerX || received.playerY != gameState.p2.playerY)
-            {
-                // 작업 대기열에 추가
-                std::lock_guard<std::mutex> lock(queueMutex);
-                workQueue.push({ clientAddr, received });
-                cv.notify_one(); // 처리 스레드에 알림
-            }
-        }
-        //cv.notify_one(); // 처리 스레드에 알림
     }
     std::cout << "receiverThread 종료\n";
 }
@@ -116,25 +117,17 @@ void processorThread() {
         // ...
         Player tPlayer;
         tPlayer.playernum = task.second.playernum;
-        tPlayer.playerX = task.second.playerX;
-        tPlayer.playerY = task.second.playerY;
+        tPlayer.direction = task.second.direction;
+        tPlayer.score = task.second.score;
 
-        if (tPlayer.playernum == 1)     //1P
+        for (int i = 0; i < gameState.playerList.size(); i++)
         {
-            gameState.p1.playerX = tPlayer.playerX;
-            gameState.p1.playerY = tPlayer.playerY;
-
+            gameState.playerList[i]->direction = tPlayer.direction;
+            gameState.playerList[i]->score = tPlayer.score;
             broadcastNow = true;    //값이 변했다
-        }
-        else if (tPlayer.playernum == 2)     //2P
-        {
-            gameState.p2.playerX = tPlayer.playerX;
-            gameState.p2.playerY = tPlayer.playerY;
 
-            broadcastNow = true;    //값이 변했다
+            std::cout << "서버 업데이트 플레이어 1 : " << gameState.playerList[i]->direction << ",  " << gameState.playerList[i]->score << std::endl;
         }
-        std::cout << "서버 업데이트 플레이어 1 : " << gameState.p1.playerX << ",  " << gameState.p1.playerY << std::endl;
-        std::cout << "서버 업데이트 플레이어 2 : " << gameState.p2.playerX << ",  " << gameState.p2.playerY << std::endl << std::endl;
 
         {
             //클라이언트 리스트 업데이트
@@ -163,23 +156,17 @@ void broadcasterThread(GameState& gameState) {
 
         if (broadcastNow)
         {
-            //게임 상태를 버퍼에 복사
-            //...
-            //1P
-            std::memcpy(&buffer[offset], &gameState.p1.playernum, sizeof(gameState.p1.playernum));
-            offset += sizeof(gameState.p1.playernum);
-            std::memcpy(&buffer[offset], &gameState.p1.playerX, sizeof(gameState.p1.playerX));
-            offset += sizeof(gameState.p1.playerX);
-            std::memcpy(&buffer[offset], &gameState.p1.playerY, sizeof(gameState.p1.playerY));
-            offset += sizeof(gameState.p1.playerY);
+            for (int i = 0; i < gameState.playerList.size(); i++)
+            {
+                std::memcpy(&buffer[offset], &gameState.playerList[i]->playernum, sizeof(gameState.playerList[i]->playernum));
+                offset += sizeof(gameState.playerList[i]->playernum);
 
-            //2P
-            std::memcpy(&buffer[offset], &gameState.p2.playernum, sizeof(gameState.p2.playernum));
-            offset += sizeof(gameState.p2.playernum);
-            std::memcpy(&buffer[offset], &gameState.p2.playerX, sizeof(gameState.p2.playerX));
-            offset += sizeof(gameState.p2.playerX);
-            std::memcpy(&buffer[offset], &gameState.p2.playerY, sizeof(gameState.p2.playerY));
-            offset += sizeof(gameState.p2.playerY);
+                std::memcpy(&buffer[offset], &gameState.playerList[i]->direction, sizeof(&gameState.playerList[i]->direction));
+                offset += sizeof(&gameState.playerList[i]->direction);
+
+                std::memcpy(&buffer[offset], &gameState.playerList[i]->score, sizeof(gameState.playerList[i]->score));
+                offset += sizeof(gameState.playerList[i]->score);
+            }
 
             broadcastNow = false;
         }
@@ -250,14 +237,10 @@ int main() {
         // 게임 상태 초기화
         //....
         //1P
-        gameState.p1.playernum = 1;
-        gameState.p1.playerX = 70;
-        gameState.p1.playerY = 100;
-
-        //2P
-        gameState.p2.playernum = 2;
-        gameState.p2.playerX = 270;
-        gameState.p2.playerY = 100;
+        for (int i = 0; i < gameState.playerList.size(); i++)
+        {
+            gameState.playerList[i]->playernum = i;
+        }
 
         // 스레드 시작
         std::thread recvThread(receiverThread);

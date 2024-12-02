@@ -6,14 +6,15 @@
 #include <iostream>
 #include <cassert>
 #include <string>
-#include <thread>        // 추가된 헤더
-#include <mutex>         // 추가된 헤더
+#include <thread>        
+#include <mutex>         
+
+// 게임 매니저 include
+#include "../GameElement/GameManager/GameManager.h"
 
 #include "framework.h"
 #include "LarvaGame.h"
 
-// 게임 매니저 include
-#include "../GameElement/GameManager/GameManager.h"
 
 #define MAX_LOADSTRING 100
 
@@ -133,7 +134,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
 #pragma region AllRegionValue
 
-GameManager gameManager(2);
+GameManager gameManager;
 
 HBRUSH MyBrush, OldBrush;
 
@@ -146,16 +147,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
     case WM_CREATE:
     {
+        // 클라이언트 네트워크 통신을 별도의 스레드에서 실행
+        std::thread clientThread(&Client::connectServer, &gameManager.client);
+        clientThread.detach(); // 메인 스레드와 분리하여 백그라운드에서 실행되도록 함
+
         gameManager.BoardSetting();
         gameManager.SetDir(2);
 
         SetTimer(hWnd, 1, gameManager.gameTime, NULL);
         SetTimer(hWnd, 2, gameManager.gameTime, NULL);
         SendMessage(hWnd, WM_TIMER, 1, 0);
-
-        // 클라이언트 네트워크 통신을 별도의 스레드에서 실행
-        std::thread clientThread(&Client::connectServer, &gameManager.client);
-        clientThread.detach(); // 메인 스레드와 분리하여 백그라운드에서 실행되도록 함
 
         break;
     }
@@ -284,6 +285,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         case 1:
         {
             std::lock_guard<std::mutex> lock(gameManager.gameStateMutex); // 동기화 처리
+            gameManager.UpdateFromNetwork();
+
             gameManager.Move();
             gameManager.BoardStateCheck();
         }

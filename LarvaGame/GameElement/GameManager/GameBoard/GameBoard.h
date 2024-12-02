@@ -1,8 +1,6 @@
 #pragma once
 
 #include <vector>
-
-#include "GameBoard.h"
 #include "../../../engine/random/random.h"
 
 class BoardPiece;
@@ -38,7 +36,6 @@ public:
     std::vector<Item*> ItemList;
 
 private:
-
     void BoardLocationSetting();
     int BoardTileContentsSetting();
     int BoardItemContentsSetting();

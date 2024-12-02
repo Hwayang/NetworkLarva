@@ -1,12 +1,9 @@
 #pragma comment(lib, "Ws2_32.lib")
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
-#include <winsock2.h>
-#include <iostream>
-#include <chrono>
-#include <thread>
-#include <stdexcept>
 
 #include "Client.h"
+
+#include <thread>
 
 #define BUFFER_SIZE 512
 #define PORT 9700
@@ -71,15 +68,11 @@ void Client::connectServer()
 
     //게임 최초 초기화 수행할 것
     //...
-    //1P
-    cGameState.p1.playernum = 1;
-    cGameState.p1.playerX = 70;
-    cGameState.p1.playerY = 100;
-
-    //2P
-    cGameState.p2.playernum = 2;
-    cGameState.p2.playerX = 270;
-    cGameState.p2.playerY = 100;
+    
+    for (int i = 0; i < cGameState.playerList.size(); i++)
+    {
+        cGameState.playerList[i]->playernum = i;
+    }
 
     // Start the game loop in a separate thread
     std::thread gameThread(&Client::GameLoop, this, playerNumber, clientSocket, serverAddr);
@@ -100,6 +93,12 @@ GameState Client::GetClientInfo()
     return cGameState;
 }
 
+void Client::SendThisPlayerInfo(int direction, int score)
+{
+    this->cGameState.playerList[0]->direction = direction;
+    this->cGameState.playerList[0]->score = score;
+}
+
 
 void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
 {
@@ -117,9 +116,6 @@ void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
     serverAddr.sin_family = AF_INET;
     serverAddr.sin_port = htons(PORT);
     serverAddr.sin_addr.s_addr = inet_addr(ip.c_str());
-
-    int p;
-    std::cin >> p;
 
     // 게임 로직 수행
     int offset;
