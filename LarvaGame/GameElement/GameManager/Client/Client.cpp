@@ -122,39 +122,25 @@ void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
     while (true) {
         //플레이어 입력
         //...
-        if (p == 1) {   //1P
-            cGameState.p1.playerX += 1;
-            cGameState.p1.playerY += 1;
 
-            {//자동으로 buffer의 여백에 데이터를 memcpy
-                //입력값을 버퍼에 추가
-                //...
-                offset = 0;
-                std::memcpy(&buffer[offset], &cGameState.p1.playernum, sizeof(cGameState.p1.playernum));
-                offset += sizeof(cGameState.p1.playernum);
-                std::memcpy(&buffer[offset], &cGameState.p1.playerX, sizeof(cGameState.p1.playerX));
-                offset += sizeof(cGameState.p1.playerX);
-                std::memcpy(&buffer[offset], &cGameState.p1.playerY, sizeof(cGameState.p1.playerY));
-                offset += sizeof(cGameState.p1.playerY);
 
-            }
-        }
-        else if (p == 2) {    //2P
-            cGameState.p2.playerX += -1;
-            cGameState.p2.playerY += -1;
+        //TODO : GameManager에서 갖고오기
+        cGameState.playerList[0]->direction = 1;
+        cGameState.playerList[0]->score = 1;
 
-            {//자동으로 buffer의 여백에 데이터를 memcpy
-                //입력값을 버퍼에 추가
-                //...
-                offset = 0;
-                std::memcpy(&buffer[offset], &cGameState.p2.playernum, sizeof(cGameState.p2.playernum));
-                offset += sizeof(cGameState.p2.playernum);
-                std::memcpy(&buffer[offset], &cGameState.p2.playerX, sizeof(cGameState.p2.playerX));
-                offset += sizeof(cGameState.p2.playerX);
-                std::memcpy(&buffer[offset], &cGameState.p2.playerY, sizeof(cGameState.p2.playerY));
-                offset += sizeof(cGameState.p2.playerY);
+        {//자동으로 buffer의 여백에 데이터를 memcpy
+            //입력값을 버퍼에 추가
+            //...
+            offset = 0;
+            std::memcpy(&buffer[offset], &cGameState.playerList[0]->playernum, sizeof(cGameState.playerList[0]->playernum));
+            offset += sizeof(cGameState.playerList[0]->playernum);
 
-            }
+            std::memcpy(&buffer[offset], &cGameState.playerList[0]->direction, sizeof(cGameState.playerList[0]->direction));
+            offset += sizeof(cGameState.playerList[0]->direction);
+
+            std::memcpy(&buffer[offset], &cGameState.playerList[0]->score, sizeof(cGameState.playerList[0]->score));
+            offset += sizeof(cGameState.playerList[0]->score);
+
         }
 
         //서버에 전송
@@ -178,25 +164,19 @@ void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
         GameState sGameState;       //서버로 부터 받는 게임 정보
         offset = 0;
 
-        //1P
-        std::memcpy(&sGameState.p1.playernum, &buffer[offset], sizeof(sGameState.p1.playernum));
-        offset += sizeof(sGameState.p1.playernum);
-        std::memcpy(&sGameState.p1.playerX, &buffer[offset], sizeof(sGameState.p1.playerX));
-        offset += sizeof(sGameState.p1.playerX);
-        std::memcpy(&sGameState.p1.playerY, &buffer[offset], sizeof(sGameState.p1.playerY));
-        offset += sizeof(sGameState.p1.playerY);
+        for (int i = 0; i < cGameState.playerList.size(); i++)
+        {
+            std::memcpy(&sGameState.playerList[i]->playernum, &buffer[offset], sizeof(sGameState.playerList[i]->playernum));
+            offset += sizeof(sGameState.playerList[i]->playernum);
 
-        //2P
-        std::memcpy(&sGameState.p2.playernum, &buffer[offset], sizeof(sGameState.p2.playernum));
-        offset += sizeof(sGameState.p2.playernum);
-        std::memcpy(&sGameState.p2.playerX, &buffer[offset], sizeof(sGameState.p2.playerX));
-        offset += sizeof(sGameState.p2.playerX);
-        std::memcpy(&sGameState.p2.playerY, &buffer[offset], sizeof(sGameState.p2.playerY));
-        offset += sizeof(sGameState.p2.playerY);
+            std::memcpy(&sGameState.playerList[i]->direction, &buffer[offset], sizeof(sGameState.playerList[i]->direction));
+            offset += sizeof(sGameState.playerList[i]->direction);
 
+            std::memcpy(&sGameState.playerList[i]->score, &buffer[offset], sizeof(sGameState.playerList[i]->score));
+            offset += sizeof(sGameState.playerList[i]->score);
 
-        std::cout << "---------------------------------------------------------\n" << "서버 업데이트 1 : " << cGameState.p1.playerX << ",    " << cGameState.p1.playerY << std::endl;
-        std::cout << "서버 업데이트 2 : " << cGameState.p2.playerX << ",    " << cGameState.p2.playerY << std::endl << std::endl;
+            std::cout << "---------------------------------------------------------\n" << "서버 업데이트" << 1 << " : " << cGameState.playerList[i]->direction << ", " << cGameState.playerList[i]->score << std::endl;
+        }
 
         // 다음 틱을 기다림
         std::this_thread::sleep_until(nextTick);
@@ -205,20 +185,15 @@ void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
         //분석한 데이터를 게임에 적용
         //...
         if (result != SOCKET_ERROR) {   //서버로부터 데이터를 성공적으로 받았는가?
-            if (cGameState.p1.playerX != sGameState.p1.playerX ||
-                cGameState.p1.playerY != sGameState.p1.playerY)
-            {
-                cGameState.p1.playerX = sGameState.p1.playerX;
-                cGameState.p1.playerY = sGameState.p1.playerY;
-            }
 
-            if (cGameState.p2.playerX != sGameState.p2.playerX ||
-                cGameState.p2.playerY != sGameState.p2.playerY)
+            for (int i = 0; i < cGameState.playerList.size(); i++)
             {
-                cGameState.p2.playerX = sGameState.p2.playerX;
-                cGameState.p2.playerY = sGameState.p2.playerY;
+                if (cGameState.playerList[i]->direction != sGameState.playerList[i]->direction || cGameState.playerList[i]->score != sGameState.playerList[i]->score)
+                {
+                    cGameState.playerList[i]->direction = sGameState.playerList[i]->direction;
+                    cGameState.playerList[i]->score = sGameState.playerList[i]->score;
+                }
             }
-
         }
         //클라이언트에서만 처리할 변경점 처리(점수 등)
         //...
@@ -226,8 +201,10 @@ void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
         //로컬 게임 업데이트 출력
         //...
 
-        std::cout << "게임 내부 업데이트 1 : " << cGameState.p1.playerX << ",    " << cGameState.p1.playerY << std::endl;
-        std::cout << "게임 내부 업데이트 2 : " << cGameState.p2.playerX << ",    " << cGameState.p2.playerY << std::endl << std::endl;
+        for (int i = 0; i < cGameState.playerList.size(); i++)
+        {
+            std::cout << "클라이언트 업데이트 플레이어" << i << " : " << cGameState.playerList[i]->direction << ",  " << gameState.playerList[i]->score << std::endl;
+        }
 
         if (recvErrorCount >= maxRecvErrorCount) {
             printLastError("too much recvError");
