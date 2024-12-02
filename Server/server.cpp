@@ -126,7 +126,7 @@ void processorThread() {
             gameState.playerList[i]->score = tPlayer.score;
             broadcastNow = true;    //값이 변했다
 
-            std::cout << "서버 업데이트 플레이어 1 : " << gameState.playerList[i]->direction << ",  " << gameState.playerList[i]->score << std::endl;
+            std::cout << "서버 업데이트 플레이어" << i << " : " << gameState.playerList[i]->direction << ",  " << gameState.playerList[i]->score << std::endl;
         }
 
         {
