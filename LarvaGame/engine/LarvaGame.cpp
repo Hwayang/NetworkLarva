@@ -6,8 +6,7 @@
 #include <iostream>
 #include <cassert>
 #include <string>
-#include <thread>        
-#include <mutex>         
+#include <thread>             
 
 // 게임 매니저 include
 #include "../GameElement/GameManager/GameManager.h"
@@ -148,7 +147,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_CREATE:
     {
         // 클라이언트 네트워크 통신을 별도의 스레드에서 실행
-        std::thread clientThread(&Client::connectServer, &gameManager.client);
+        std::thread clientThread(&Client::connectServer, gameManager.client);
         clientThread.detach(); // 메인 스레드와 분리하여 백그라운드에서 실행되도록 함
 
         gameManager.BoardSetting();
@@ -182,7 +181,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         PAINTSTRUCT ps;
         HDC hdc = BeginPaint(hWnd, &ps);
 
-        std::lock_guard<std::mutex> lock(gameManager.gameStateMutex); // 동기화 처리
+        //std::lock_guard<std::mutex> lock(gameManager.gameStateMutex); // 동기화 처리
 
         for (int i = 0; i < gameManager.playerCount; i++)
         {

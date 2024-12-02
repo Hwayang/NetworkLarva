@@ -9,12 +9,14 @@
 
 GameManager::GameManager()
 {
+    client = new Client(this->playerCount);
+
     Random<int> gen(0, 10000); // 시드를 사용한 랜덤 객체 생성
     int seed = gen();
 
     bufSize = boardSize * tileSize + 100;
 
-    for (int i = 0; i < this->client->GetClientInfo().playerList.size(); i++)
+    for (int i = 0; i < 2; i++)
     {
         auto target = std::make_unique<GameBoard>(this->tileSize, this->boardSize, this->bufSize, i, seed);
         this->BoardList.push_back(std::move(target));
@@ -48,7 +50,7 @@ void GameManager::GameOver()
 
 void GameManager::Move()
 {
-    std::lock_guard<std::mutex> lock(gameStateMutex); // 동기화 처리
+    //std::lock_guard<std::mutex> lock(gameStateMutex); // 동기화 처리
 
     for (auto& board : this->BoardList)
     {
@@ -69,9 +71,8 @@ void GameManager::SetDir(int direction)
 
 void GameManager::UpdateFromNetwork()
 {
-    std::lock_guard<std::mutex> lock(gameStateMutex);
-
     gs = client->GetClientInfo();
+    //std::lock_guard<std::mutex> lock(this->gameStateMutex);
 
     // gameState를 사용하여 GameManager의 상태를 업데이트
     // 예를 들어, 플레이어 위치를 업데이트합니다.

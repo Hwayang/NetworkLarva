@@ -26,6 +26,14 @@ void Client::printLastError(const std::string& message) {
     std::cerr << message << " Error code: " << error << std::endl;
 }
 
+Client::Client(int playerCount)
+{
+    for (int i = 0; i < playerCount; i++)
+    {
+        this->cGameState.playerList.push_back(new Player);
+    }
+}
+
 void Client::connectServer()
 {
     int result;
@@ -61,11 +69,6 @@ void Client::connectServer()
     serverAddr.sin_port = htons(PORT);
     serverAddr.sin_addr.s_addr = inet_addr(ip.c_str());
 
-    // Select player number
-    int playerNumber;
-    std::cout << "Enter player number (1 or 2): ";
-    std::cin >> playerNumber;
-
     //게임 최초 초기화 수행할 것
     //...
     
@@ -75,7 +78,7 @@ void Client::connectServer()
     }
 
     // Start the game loop in a separate thread
-    std::thread gameThread(&Client::GameLoop, this, playerNumber, clientSocket, serverAddr);
+    std::thread gameThread(&Client::GameLoop, this, clientSocket, serverAddr);
 
     // Main thread can handle other tasks here
     // For example, handling user inputs or GUI updates
@@ -100,7 +103,7 @@ void Client::SendThisPlayerInfo(int direction, int score)
 }
 
 
-void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
+void Client::GameLoop(SOCKET clientSocket, sockaddr_in Addr)
 {
     int result;
     int recvErrorCount = 0;
@@ -203,7 +206,7 @@ void Client::GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in Addr)
 
         for (int i = 0; i < cGameState.playerList.size(); i++)
         {
-            std::cout << "클라이언트 업데이트 플레이어" << i << " : " << cGameState.playerList[i]->direction << ",  " << gameState.playerList[i]->score << std::endl;
+            std::cout << "클라이언트 업데이트 플레이어" << i << " : " << cGameState.playerList[i]->direction << ",  " << cGameState.playerList[i]->score << std::endl;
         }
 
         if (recvErrorCount >= maxRecvErrorCount) {

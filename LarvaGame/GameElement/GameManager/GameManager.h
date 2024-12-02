@@ -2,7 +2,6 @@
 
 #include "Client/Client.h"
 
-#include <vector>
 #include <memory>     
 #include <mutex>      
 

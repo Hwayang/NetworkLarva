@@ -10,13 +10,15 @@
 class Client
 {
 public:
+    Client(int playerCount);
+
     void connectServer();
     GameState GetClientInfo();
     void SendThisPlayerInfo(int direction, int score);
 
 private:
 
-    void GameLoop(int playerNumber, SOCKET clientSocket, sockaddr_in serverAddr);
+    void GameLoop(SOCKET clientSocket, sockaddr_in serverAddr);
     void printLastError(const std::string& message);
 
 private:
