@@ -274,10 +274,7 @@ int main()
         sockaddr_in serverAddr = {};
         serverAddr.sin_family = AF_INET;
         serverAddr.sin_port = htons(PORT);
-
-        if (inet_pton(AF_INET, ip.c_str(), &serverAddr.sin_addr) <= 0) {
-            throw std::runtime_error("Invalid IP address");
-        }
+        serverAddr.sin_addr.s_addr = inet_addr(ip.c_str());
 
         if (bind(serverSocket, (sockaddr*)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR) {
             throw std::runtime_error("bind failed");
