@@ -156,14 +156,25 @@ void broadcasterThread(GameState& gameState) {
         char buffer[BUFFER_SIZE];
         int offset = 0;
 
-        if (broadcastNow) {
-            // GameState를 버퍼로 복사
-            std::memcpy(&buffer[offset], &gameState.p1, sizeof(Player));
-            offset += sizeof(Player);
-            std::memcpy(&buffer[offset], &gameState.p2, sizeof(Player));
-            offset += sizeof(Player);
+        if (broadcastNow)
+        {
+            for (int i = 0; i < gameState.playerList.size(); i++)
+            {
+                std::memcpy(&buffer[offset], &gameState.playerList[i]->playernum, sizeof(gameState.playerList[i]->playernum));
+                offset += sizeof(gameState.playerList[i]->playernum);
+
+                std::memcpy(&buffer[offset], &gameState.playerList[i]->direction, sizeof(&gameState.playerList[i]->direction));
+                offset += sizeof(&gameState.playerList[i]->direction);
+
+                std::memcpy(&buffer[offset], &gameState.playerList[i]->score, sizeof(gameState.playerList[i]->score));
+                offset += sizeof(gameState.playerList[i]->score);
+            }
 
             broadcastNow = false;
+        }
+        else if(isRunning)
+        {
+            continue;  //값이 변하지 않았음!
         }
         else {
             std::this_thread::sleep_for(std::chrono::milliseconds(broadcastRate));
