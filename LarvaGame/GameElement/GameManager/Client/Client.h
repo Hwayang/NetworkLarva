@@ -11,6 +11,7 @@ class Client
 {
 public:
     Client(int playerCount);
+    ~Client();
 
     void connectServer();
     GameState GetClientInfo();
